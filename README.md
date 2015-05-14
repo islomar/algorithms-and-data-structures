@@ -29,8 +29,8 @@ Trying to improve my algorithmics skills :-)
 * Data structure must be an array and it **must be sorted**.
 * Binary search in a sorted array: O(log(n))
 * Insert: first, find the position where it should be inserted. Then, shift the elements on the right.
-* Insert:   O(n)
-* Removal:  O(n)
+* Insert:   O(log n)
+* Removal:  O(log n)
 
 ###LinkedList
 * Tend not to do very well with accessing and sorting numbers.
@@ -38,15 +38,20 @@ Trying to improve my algorithmics skills :-)
 * Insert:   O(1) at head, O(n) at tail.
 * Removal:  O(n)
 * Links of interest:
-** http://algs4.cs.princeton.edu/32bst/
-** https://www.youtube.com/watch?v=pYT9F8_LFTM
+ * http://algs4.cs.princeton.edu/32bst/
+ * https://www.youtube.com/watch?v=pYT9F8_LFTM
 
 ###Array
 * Searching is not optimal: you might need to look at all the elements of the array until finding the one loooked.
 * Removal means that you have to shift all the records to the right of element removed.
-* Search:   O(n)
-* Insert:   O(1)
-* Removal:  O(n)
+* In an unsorted array:
+  * Search:   O(n)
+  * Insert:   O(1)
+  * Removal:  O(n)
+* In a sorted array:
+ * Search: O(log n)
+ * Insert: O(n)
+ * Removal: O(n)
 
 ###Binary trees
 Do fairly well with ordering. If the binary search tree is perfectly balanced, the top might be the median. But if there's an even number of elements, the median is actually the average of the middle two elements.
@@ -56,3 +61,6 @@ Really ood at basic ordering and keeping track of max and mins.
 
 ##Big-O-notation
 http://en.wikipedia.org/wiki/Big_O_notation
+
+##Logarithms
+log2( 2^31 ) = 31
