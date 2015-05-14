@@ -33,7 +33,11 @@ public class MyStringUtils {
   }
 
   /**
-   * It takes O(n) time and O(1/8) space. Using a bit vector, we can reduce our space usage by a factor of eight.
+   * It takes O(n) time and O(1/8) space.
+   * Using a bit vector, we can reduce our space usage by a factor of eight,
+   * comparing with a solution where we use a boolean array to set if a character exists or not).
+   * Booleans take 1 byte, so in the other solution, we need 1 byte per character. Here we only need 1 bit per character.
+   *
    * This solution assumes that the string only uses the lower case letter a through z.
    *
    * Probably int may be a little bit faster, because operations with bits are very low level and can be executed as-is by CPU.
@@ -41,6 +45,7 @@ public class MyStringUtils {
    * @return true if the String has only unique characters, false otherwise.
    */
   public static boolean isUniqueChars(String strinWithUniqueCharacters) {
+    //We are using the int checker as an array of size 32.
     int checker = 0;
     for (int i = 0; i < strinWithUniqueCharacters.length(); i++) {
       // if the char is 'b', val=1

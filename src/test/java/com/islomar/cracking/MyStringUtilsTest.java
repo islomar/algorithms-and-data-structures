@@ -12,6 +12,8 @@ public class MyStringUtilsTest {
   /**
    * Implement an algorithm to determine if a string has all unique characters.
    * You can NOT use additional data structures.
+   *
+   * http://stackoverflow.com/questions/9141830/explain-the-use-of-a-bit-vector-for-determining-if-all-characters-are-unique
    */
   public void assert_that_a_string_has_all_unique_characters() {
 
