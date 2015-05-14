@@ -59,7 +59,7 @@ https://www.youtube.com/playlist?list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
  * Insert: O(n)
  * Removal: O(n)
  
- ###ArrayList (dynamically resizing Array)
+###ArrayList (dynamically resizing Array)
 It is an array that resizes itself as needed while stil providing O(1) access.
 
 ###Binary trees
@@ -68,6 +68,9 @@ Do fairly well with ordering. If the binary search tree is perfectly balanced, t
 
 ###Heap
 Really ood at basic ordering and keeping track of max and mins.
+
+###String
+Sorting the chars of a String takes O(n log(n))
 
 ##Big-O-notation
 http://en.wikipedia.org/wiki/Big_O_notation
