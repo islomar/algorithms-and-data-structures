@@ -1,5 +1,6 @@
 # Cracking the coding interview
-Examples and annotations of the book "Cracking the coding interview". 
+http://www.crackingthecodinginterview.com/
+Examples and annotations of the book "Cracking the coding interview".
 Trying to improve my algorithmics skills :-)
 
 ## Five algorithm approaches
@@ -21,7 +22,7 @@ Trying to improve my algorithmics skills :-)
 https://www.youtube.com/playlist?list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
 
 ### Hash Tables
-* Highly efficient lookup. 
+* Highly efficient lookup.
 * In a very simple implementation, it has an array and a hash function. A hash function maps the key to an integer, which indicates the index in the array (index=hash(key)). The object is then stored at that index. But the array should be very large to avoid collisions between the same hash(key) generated.
 * Better: store the object in a linked list at index hash(key)%array_length.
 * Another implementation is a binary search tree. We can then guarantee an O(log n) lookup time, since we can keep the tree balanced.
@@ -58,7 +59,7 @@ https://www.youtube.com/playlist?list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
  * Search: O(log n)
  * Insert: O(n)
  * Removal: O(n)
- 
+
 ### ArrayList (dynamically resizing Array)
 It is an array that resizes itself as needed while stil providing O(1) access.
 
