@@ -41,3 +41,15 @@ Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-inte
     * push and pop: both operations are O(1)
     * LIFO
     * Stack practice: Here's an alternative solution to delete_first() - https://gist.github.com/adarsh0806/02d8e1d54d510294e75dfbc0d9bd7059
+* **Queues**
+    * FIFO
+    * The opposite to a Stack
+    * head and tail
+    * enqueue: adding an element to the tail
+    * dequeue: deleting an element from the head
+    * peek: look at the head element, but you don't remove it
+    * **Dequeue = Double ended queue**: it's a queue that goes in both ways. You can enqueue and dequeue from either end.
+    * A **deck** is kind of a generalized version of both stacks and queues.
+    * **Priority queue**: you include a priority to every element that you insert in the queue.
+        * When you dequeue, you remove the element with the highest priority.
+        * If the elements have the same priority, the oldest element is the one that gets dequeued first.
