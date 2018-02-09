@@ -19,9 +19,11 @@ class Classy(object):
     ITEM_TO_CLASSINESS = {'tophat': 2, 'bowtie': 4, 'monocle': 5}
 
     def __init__(self):
+        self.items = []
         self.classiness = 0
 
     def addItem(self, item):
+        self.items.append(item)
         self.classiness += self.ITEM_TO_CLASSINESS.get(item, 0)
 
     def getClassiness(self):
