@@ -15,9 +15,7 @@ class Queue:
         return self.storage[0]
 
     def dequeue(self):
-        value_to_be_removed = self.storage[0]
-        self.storage.remove(value_to_be_removed)
-        return value_to_be_removed
+        return self.storage.pop(0)
 
 # Setup
 q = Queue(1)
