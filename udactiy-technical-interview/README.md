@@ -32,5 +32,6 @@ Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-inte
     * It's an extension of a List, but it is not an Array.
     * Each elements has a reference to the next element in the list (a pointer to the memory address).
     * Adding and removing elements from a Linked list is easy: you just need to change a couple of references. It takes constant time (you change pointers, you don't iterate)
+    * There isn't a built-in data structure in Python that looks like a linked list. 
     * **Doubly Linked Lists**: you have pointers to both the next and previous elements.
 * TBD
