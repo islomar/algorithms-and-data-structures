@@ -1,6 +1,6 @@
 # Udacity course: Algorithms and data structures for technical interviewing
 https://www.udacity.com/course/technical-interview--ud513
-Tutor: Brin
+Tutor: Brynn Claypoole (https://www.linkedin.com/in/bclaypoole/)
 Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-interviewing-algorithm
 
 
@@ -32,6 +32,12 @@ Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-inte
     * It's an extension of a List, but it is not an Array.
     * Each elements has a reference to the next element in the list (a pointer to the memory address).
     * Adding and removing elements from a Linked list is easy: you just need to change a couple of references. It takes constant time (you change pointers, you don't iterate)
-    * There isn't a built-in data structure in Python that looks like a linked list. 
+    * There isn't a built-in data structure in Python that looks like a linked list.
     * **Doubly Linked Lists**: you have pointers to both the next and previous elements.
-* TBD
+* **Stacks**
+    * Stacks are also list-based data structures.
+    * You can only access what it is on the top of the stack.
+    * Stacks are useful when you only care about the most recent elements.
+    * push and pop: both operations are O(1)
+    * LIFO
+    * Stack practice: Here's an alternative solution to delete_first() - https://gist.github.com/adarsh0806/02d8e1d54d510294e75dfbc0d9bd7059
