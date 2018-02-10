@@ -53,3 +53,7 @@ Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-inte
     * **Priority queue**: you include a priority to every element that you insert in the queue.
         * When you dequeue, you remove the element with the highest priority.
         * If the elements have the same priority, the oldest element is the one that gets dequeued first.
+
+
+## Lesson 3: Searching and Sorting
+TBD
