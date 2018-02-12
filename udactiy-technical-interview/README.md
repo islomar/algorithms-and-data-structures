@@ -110,6 +110,26 @@ Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-inte
     * Sets don't have any specific order, but it doesn't allow repeated elements.
     * A Map is a set-based structure (<Key, Value>).
     * A group of keys is a Set: the keys of map need to be unique (like in a dictionary)
+* **Hashing**
+    * Data structures that use hashing allow look-ups in constant time.
+    * Value -- (hash function) --> Hash value
+    * You usually use the hash value as the index to store the Value.
+    * One common pattern is to take the last digits of a big number, divide it by some consistent number and using the reminder of the division to find a space where to store the Value.
+    * If we get the same hash value for two values, that's a collision:
+        * you can change your hash function
+        * or you can store several values in the index: we would call that space a "bucket".
+    * Originally we would have O(1), but with the bucket approach, we would have O(m) for the worst case.
+    * When we're talking about hash tables, we can define a **load factor**:
+        * Load Factor = Number of Entries / Number of Buckets
+        * The purpose of a load factor is to give us a sense of how "full" a hash table is. For example, if we're trying to store 10 values in a hash table with 1000 buckets, the load factor would be 0.01, and the majority of buckets in the table will be empty. We end up wasting memory by having so many empty buckets, so we may want to rehash, or come up with a new hash function with less buckets. We can use our load factor as an indicator for when to rehash—as the load factor approaches 0, the more empty, or sparse, our hash table is.
+        * On the flip side, the closer our load factor is to 1 (meaning the number of values equals the number of buckets), the better it would be for us to rehash and add more buckets. Any table with a load value greater than 1 is guaranteed to have collisions.
+* **Hash Maps**
+    * See exercise
+    * https://stackoverflow.com/questions/299304/why-does-javas-hashcode-in-string-use-31-as-a-multiplier
+
+
+## Lesson 5: Treese
+TBD
 
 ## Interesting links
 * Watch all kind of sorting algorithms in action:  https://visualgo.net/en/sorting?slide=1
