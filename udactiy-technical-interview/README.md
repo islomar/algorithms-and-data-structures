@@ -69,3 +69,41 @@ Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-inte
         * to call itself at some poing
         * a base case: it's like an exit condition.
         * Alter the input parameter at some point
+* **Intro to sorting**
+    * "In place sorting algorithms" just rearrange the elements inside the same data structure.
+* **Bubble sort**
+    * aka "sinking sort", it's a naive approach
+    * In each iteration, the highest value pops up.
+    * In-place algorithm
+    * Efficiency:
+        * Worst case: O(n^2)
+        * Average case: O(n^2)
+        * Best case: O(n)
+    * Space = O(1) (in-place algorithm)
+    * https://en.wikipedia.org/wiki/Bubble_sort
+* **Merge sort**:
+     * Split and sort: First divide the list into the smallest unit (1 element), then compare each element with the adjacent list to sort and merge the two adjacent lists. Finally all the elements are sorted and merged.
+     * Divide and conquer
+     * At the beginning, we leave an array of size 1 at the start, and all the rest take size 2.
+     * Number of iterations x Number of comparisions in each iteration
+     * Efficiency:  O(n*log(n))   >> we do log(n) iterations, and n comparisons in each iteration.
+     * The time efficiency is better than Bubble sort, but the space efficiency is worse >> auxilliary space = O(n)
+        * But indeed, we can remove the "old arrays" each time, so we only need 2 arrays: the one where our numbers were, and the new array that we're copying the values into.
+    * https://xkcd.com/1185/
+    * https://algs4.cs.princeton.edu/22mergesort/
+* **Quick sort**
+    * Divide and conquer
+    * Pick a value (pivot): move all the values bigger, to its right. And move all the values lower than the pivot, to the left.
+    * The convention is to pick the last element as your pivot.
+    * Partitioning: reorder the array so that all elements with values less than the pivot come before the pivot, while all elements with values greater than the pivot come after it
+    * Recursively apply the above steps to the sub-array of elements with smaller values and separately to the sub-array of elements with greater values.
+    * Efficiency:
+        * worst case: O(n^2)
+        * Average and best case: O(n*log(n))
+    * If we know that we're a getting an almost sorted array, we don't want to use Quick sort, since we would get O(n^2)
+    * Space = O(1)
+    * https://en.wikipedia.org/wiki/Quicksort
+
+
+## Interesting links
+* Watch all kind of sorting algorithms in action:  https://visualgo.net/en/sorting?slide=1
