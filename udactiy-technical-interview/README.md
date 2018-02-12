@@ -64,4 +64,8 @@ Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-inte
     * If you don't know or see the efficiency of an algorith, create a table in order to extract: "Array size" vs "Iterations"
     * Visualization: http://www.cs.armstrong.edu/liang/animation/web/BinarySearch.html
     * Searching Sorted List Visualization: https://www.cs.usfca.edu/~galles/visualization/Search.html
-* TBD
+* **Recursion**:
+    * A recursion function needs:
+        * to call itself at some poing
+        * a base case: it's like an exit condition.
+        * Alter the input parameter at some point
