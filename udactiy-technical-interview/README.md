@@ -105,5 +105,11 @@ Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-inte
     * https://en.wikipedia.org/wiki/Quicksort
 
 
+## Lesson 4: Maps and Hashing
+* **Sets**
+    * Sets don't have any specific order, but it doesn't allow repeated elements.
+    * A Map is a set-based structure (<Key, Value>).
+    * A group of keys is a Set: the keys of map need to be unique (like in a dictionary)
+
 ## Interesting links
 * Watch all kind of sorting algorithms in action:  https://visualgo.net/en/sorting?slide=1
