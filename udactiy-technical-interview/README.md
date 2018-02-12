@@ -56,4 +56,12 @@ Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-inte
 
 
 ## Lesson 3: Searching and Sorting
-TBD
+* **Binary search**
+    * If the array is sorted, you start in the middle.
+    * Efficiency: when I double the elements, I need one more iteration.
+        * 2^n = y >>> log(y) = n >> The log would be "base 2". The logarithm is the inverse operation to the power.
+        * O(log(n))
+    * If you don't know or see the efficiency of an algorith, create a table in order to extract: "Array size" vs "Iterations"
+    * Visualization: http://www.cs.armstrong.edu/liang/animation/web/BinarySearch.html
+    * Searching Sorted List Visualization: https://www.cs.usfca.edu/~galles/visualization/Search.html
+* TBD
