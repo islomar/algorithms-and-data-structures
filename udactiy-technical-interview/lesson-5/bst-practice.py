@@ -27,7 +27,12 @@ class BST(object):
             self.insert_in_branch(start.right, new_val)
 
     def search(self, find_val):
-        return False
+        return self.search_in_branch(self.root, find_val)
+
+    def search_in_branch(self, start, find_val):
+        if start is None:
+            return False
+        return start.value == find_val or self.search_in_branch(start.left, find_val) or self.search_in_branch(start.right, find_val)
 
     def print_tree(self):
         print self.preorder_print(self.root, [])
@@ -58,9 +63,8 @@ tree.insert(5)
 # print(tree)
 
 
-
-# # Check search
-# # Should be True
-# print tree.search(4)
-# # Should be False
-# print tree.search(6)
+# Check search
+# Should be True
+print tree.search(4)
+# Should be False
+print tree.search(6)
