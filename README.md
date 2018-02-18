@@ -9,5 +9,6 @@ For the moment, I'm including lessons learned from several resources:
 
 
 ## More interesting courses
+* https://codefights.com/interview-practice
 * https://eu.udacity.com/course/intro-to-algorithms--cs215
 * https://eu.udacity.com/course/computability-complexity-algorithms--ud061

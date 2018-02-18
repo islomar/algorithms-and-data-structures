@@ -128,8 +128,49 @@ Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-inte
     * https://stackoverflow.com/questions/299304/why-does-javas-hashcode-in-string-use-31-as-a-multiplier
 
 
-## Lesson 5: Treese
+## Lesson 5: Trees
+* Root, branches, leaves, forest...
+* A tree is an extension of a Linked List.
+* Root: the first element.
+* Node: an individual element of a tree.
+* A tree must be completely connected.
+* There must be no cycles. It counts as a cycle if there is connection, no matter the sense of the arrows.
+    - Children are only allowed to have one parent.
+* Levels: the root is level 1.
+* Parent-child relationships: ancestor-descendant.
+* Siblings: children from a same parent.
+* No children: leaves or "external nodes".
+* Parent notde = internal node.
+* Connections = edges.
+* Patj = group of connections taken together.
+* Height of a node: number of edges between it and the furthest leaf of the tree.
+* A leaf has a heigth of zero. The parent of a leaf has a heigth of one.
+* Depth of a node: number of edges to the root.
+* Tree traversal:
+    - DFS: depth-first search.
+         - Pre-order traversal: we check off the nodes explored as soon as we pass through it.
+         - In order: we only check off a node after having explored its left wing.
+         - Post order: we only check off a node after having visited all of its descendants.
+    - BFS: breadth-first search. Level order traversal
+* Perfect tree: every node (except leaves) has 2 children
+* Binary trees:
+    - Parents have at most 2 children.
+    - O(n): linear time search, we need to go through all the nodes, because the is no ordering.
+    - Deleting
+    - Inserting: it's easy, you find an open spot. The worst case: the heigth of the tree.
+
+
+## Lesson 6: Graphs
 TBD
+
+
+## Lesson 7: Case studies in algorithms
+TBD
+
+
+## Lesson 8: Technical interviewing techniques
+TBD
+
 
 ## Interesting links
 * Watch all kind of sorting algorithms in action:  https://visualgo.net/en/sorting?slide=1
