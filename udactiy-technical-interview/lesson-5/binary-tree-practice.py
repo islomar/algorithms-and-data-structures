@@ -22,7 +22,8 @@ class BinaryTree(object):
         """Print out all tree nodes
         as they are visited in
         a pre-order traversal."""
-        return ""
+        initial_traversal = []
+        return self.preorder_print(self.root, initial_traversal)
 
     def preorder_search(self, start, find_val):
         """Helper method - use this to create a
@@ -34,7 +35,13 @@ class BinaryTree(object):
     def preorder_print(self, start, traversal):
         """Helper method - use this to create a
         recursive print solution."""
-        return traversal
+        if start is not None:
+            traversal.append(str(start.value))
+        if start.left is not None:
+            self.preorder_print(start.left, traversal)
+        if start.right is not None:
+            self.preorder_print(start.right, traversal)
+        return '-'.join(traversal)
 
 
 # Set up tree
