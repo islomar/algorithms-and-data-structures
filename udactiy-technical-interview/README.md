@@ -158,19 +158,170 @@ Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-inte
     - O(n): linear time search, we need to go through all the nodes, because the is no ordering.
     - Deleting
     - Inserting: it's easy, you find an open spot. The worst case: the heigth of the tree.
+* Binary Search Tree (BST):
+    - It's a type of Binary Tree.
+    - BSTs are sorted so every value on the left of a particular node is smaller than it and every value on the right of a particular node is larger than it.
+    - We can do operations like search, insert or delete pretty quickly.
+    - Search: the heighth of the tree, O(log(n))
+    - Unbalanced binary tree.
+    - Worst case: e.g. only nodes on the left or on the right (O(n))
+* Heaps:
+    * "heap" means "apilar, pila, montón".
+    * Trees (it doesn't have to be a binary tree? - but it has 2 children at most) where the elements are sorted in increasing or decreasing order.
+    * The root is either the maximum or the minimum value.
+    * Max heap: a parent must always have a higher value than its children.
+        - A function for getting the peek (max value) has O(1) complexity.
+    * Min heap: a parent must always have a lower value than its children.
+    * A heap tree must be a "complete" tree: all levels, except the last one, must be full. The right most leaf will be empty until the whole row has been filled (it's filled from left to right).
+    * Search: there is no guarentee that the left branch will be higher or lower than the number searched. The cost is linear, O(n).
+    * Insert: we just insert the element in a free spot, and then we heapify:
+        - Heapify: it's the operation where we reorder the tree based on the heap property. We compare the element with its parent: if the parent is lower, then we just swap the elements.
+    * Extract (delete): take the rightmost element, and then compare with its children and swap when necessary.
+    * Worst case: O(log(n)) >> height of the tree
+    * Usually represented as Arrays.
+        - Not every array can be represented as a Tree.
+        - Storing in an Array saves space: we only require the value and index. In a tree-node-like element, we would need left, right, etc.
+* Self-balancing trees:
+    * A balanced tree has nodes condensed only to a few levels.
+    * The most unbalanced tree is a linked list.
+    * A self-balancing tree is one which tries to minimize the number of levels that it uses.
+    * It runs some algorithms during insert and delete to keep itself balanced; it also might store some additional property.
+    * Red-black treee:
+        - It's an extension of a Binary Tree.
+        - Nodes have an additional property: a color (black or red)
+        - Rules:
+            - It exists null leaf nodes (which are drawed as black).
+            - The root node must be black.
+            - If a node is red, the children must be black.
+            - Every path from a node to its descendeant null nodes must contain the same number of black nodes.
+        - Insert:
+            - There are 5 cases, review the video!
+            - If your parent and sibling are both red, transform them to black, and the grandparent becomes red (unless the grandparent is the root).
+            - Average and worst cases: O(log(n))
 
 
 ## Lesson 6: Graphs
-TBD
+* Data structure designed to show relationships between objects.
+* ~ a network
+* Nodes or "vertex"
+* Connections = edges
+* A Tree is a type of Graph
+* The is no "root" node.
+* Edges can contain information too, not only the Nodes.
+* Edges can have a Direction: "directed graph".
+* Graphs can have cycles.
+* DAG: Directed Acyclic Graph >> directed graph with no cycles.
+* "Disconnected Graph": there is some vertex which can not be reached by other vertices
+* Connectivity: minimum number of elements that need to be removed for a graph to become disconnected.
+* **Disconnected**
+    * Disconnected graphs are very similar whether the graph's directed or undirected—there is some vertex or group of vertices that have no connection with the rest of the graph.
+* **Weakly Connected**
+    * A directed graph is weakly connected when only replacing all of the directed edges with undirected edges can cause it to be connected. Imagine that your graph has several vertices with one outbound edge, meaning an edge that points from it to some other vertex in the graph. There's no way to reach all of those vertices from any other vertex in the graph, but if those edges were changed to be undirected all vertices would be easily accessible.
+* **Connected**
+    * Here we only use "connected graph" to refer to undirected graphs. In a connected graph, there is some path between one vertex and every other vertex.
+* **Strongly Connected**
+    * Strongly connected directed graphs must have a path from every node and every other node. So, there must be a path from A to B AND B to A.
+* **Representation**
+    * OOP: You could have Node (with vertices properties) and Vertex(with nodes properties)
+    * Edge List: list of edges; an edge is represented by two elements (id numbers for the vertices). It's a list of other lists (2D list).
+    * Adjacency List: your indices have an id number which corresponds to the index in the array. It's a 2D list.
+    * Adjacency Matrix: 2D array where the lists inside have all the same length. It's also called a rectangular array.
+        - The indexes represent nodes with those ids
+        - The lists inside represent which nodes are adjacent
+* Graph traversal:
+    * DFS (depth-first search)
+        - A common implementation uses a Stack, so we can store the node visited in the Stack.
+        - Then, you pick an edge, follow it, and mark that node as seen (and add it to the Stack).
+        - If you have already visited the node, go back to the last node and pick another edge.
+        - If you run out of edges with new nodes, you pop the current node from the stack and go back to the one before it (which is just the next one on the stack).
+        - O(|E| + |V|) >> the number of edges plus the number of vertices
+        - Each edge is visited twice
+        - there is another implementation using recursion
+    * BFS (breadth-first search)
+        - You visit every edge of one node before continuing with the graph.
+        - We use a Queue.
+        - It's kinda creating a Tree from a Graph (the root is the node with which we start)
+        - O(|E| + |V|) >> the number of edges plus the number of vertices
+* Path: a specific route you take in a graph
+* Notable paths:
+    * Eulerian path: it travels through every edge at least once. You can finish on a different node to the initial one.
+        - It's OK to have two nodes with an odd degree as long as they're the start and end of the path.
+        - There is a method (see the video): O(|E|)
+    * Eulerian cycle: you traverse every edge only once and you must end at the same node where you started.
+        - A graph can only have Eulerian cycle if all vertices have an even degree or an even number of edges connected to them.
+    * Hamiltonian path: it must go through every vertex once. It starts and ends within the same vertex.
 
 
 ## Lesson 7: Case studies in algorithms
-TBD
+* Shortest Path Problem
+    * unweighted graph: the one with less edges >> it's a BFS
+    * Posible solution for weighted undirected grpahs: Dijkstra's algorithm
+        - typical implementation: a min priority queue
+        - we always pick the node with smallest minimum distance
+        - Greedy algorithm
+        - O(|V|^2)
+* Knapsack Problem
+    * How to optimize what it can fit (the value) in a knapsack taking into account the weight of the items?
+    * * It's an NP-Hard problem
+    * Brute force solution: try every combination and choose the best one >> O(2^n) >> exponential time algorithm
+    * Faster solution: using a lookup table. O(nW), n=number of elements, W=weight limit >> pseudo-polynomial time
+* Polynomial time algorithms are much faster than exponential time algorithms for big numbers.
+* **Dynamic programming**: break a complicated problem into subproblems
+    * you start by solving a base case, a case which is so simple that the solution is trivial.
+    * Use of lookup tables (like the "faster solution" in knapsack): it stores solutions to subproblems.
+    * **Memoization**: storing precomputed values.
+* **Traveling Salesman Problem** (TSP)
+    * What's the fastest way to travel between every city and return home?
+    * It's an NP-Hard problem: it doesn't have a known algorithm that can solve it in polynomial time.
+    * Two types of algorithms are known:
+        - Exact algorithms: it finds the optimal solution.
+        - Approximation algorithms: it doesn't always find the optimal solution, but if finds a near optimal solution.
+            - Christofides algorithm: transform the graph into a tree. It guarantees the path found will be at most 50% longer than the shortest route.
+    * Brute-force solution: O(n!)
+    * Dynamic solutions: Held-Karp algorithm >> O(n^2 * 2^n)
 
 
 ## Lesson 8: Technical interviewing techniques
-TBD
+* Clarify the question!
+* Confirm the input and expected output of the algorithm.
+* Think about edge cases?
+* Think out loud while reasoning.
+* Brainstorm about different data structures and algorithms.
+* Debugging
+* Possible solution for islands problem: use of deck (double-ended queue), marking each element already explored.
 
 
 ## Interesting links
 * Watch all kind of sorting algorithms in action:  https://visualgo.net/en/sorting?slide=1
+* Live mock interview:
+    * https://www.pramp.com/#/
+    * https://www.pramp.com/tryout
+    * Pramp is a peer-to-peer mock interview platform for coding interviews, focused on questions regarding algorithms and data structures. It pairs software developers together for a practice interview, based on their background, availability and practicing needs. Pramp automates the whole process and takes care of scheduling, peer matching and interview prep content (i.e. interview questions and answers). A live practice session includes integrated HD video chat, collaborative code and support for 17 different programming languages.
+* Books
+    * Cracking the Coding Interview by Gayle Laakmann McDowell
+    * Introduction to Algorithms by Charles E. Leiserson, Clifford Stein, Ronald Rivest, and Thomas H. Cormen
+    * Programming Interviews Exposed by John Morgan, Noah Kindler, and Eric Giguere
+    * Algorithms, 4th Edition by Robert Sedgewick and Kevin Wayne
+    * Elements of Programming Interviews by Adnan Aziz
+* Websites:
+    * HackerRank: Website and community with programming challeges that you can go through for additional practice.
+        - https://www.hackerrank.com/
+    * Project Euler: This website has a ton of logic problems that you can practice writing coded solutions to.
+        - https://projecteuler.net/
+    * Interview Cake: Practice questions and some tutorials available.
+        - https://www.interviewcake.com/
+    * Interactive Python: Loads of tutorials on pretty much every topic covered here and many more, along with Python examples and concept questions.
+        - http://interactivepython.org/runestone/static/pythonds/index.html
+    * Topcoder: New practice problems every day, and some tech companies use answers to those problems to find new potential hires.
+        - https://www.topcoder.com/
+    * LeetCode: Practice problems, mock interviews, and articles about problems.
+        - https://leetcode.com/
+    * BigO Cheat Sheet: Summary of efficiencies for most common algorithms and data structures.
+        - http://bigocheatsheet.com/
+* Github Repository (Collections of Problems)
+    * The Coding Interview
+        - https://github.com/mre/the-coding-interview
+    * HTML5 Boilerplate Interview Questions
+        - https://github.com/h5bp/Front-end-Developer-Interview-Questions
+* Blog Posts
+    * Five Essential Phone Screen Questions: https://sites.google.com/site/steveyegge2/five-essential-phone-screen-questions
