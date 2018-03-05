@@ -234,6 +234,8 @@
     * Adjacency Matrix: 2D array where the lists inside have all the same length. It's also called a rectangular array.
         - The indexes represent nodes with those ids
         - The lists inside represent which nodes are adjacent
+        - Instead of storing ones and zeroes in an adjacency matrix, we can store something “more useful”, like edge weights.
+        - It might take too much space, and it stores both the existence and non existence of "links".
 * Graph traversal:
     * DFS (depth-first search)
         - A common implementation uses a Stack, so we can store the node visited in the Stack.
@@ -257,6 +259,7 @@
     * Eulerian cycle: you traverse every edge only once and you must end at the same node where you started.
         - A graph can only have Eulerian cycle if all vertices have an even degree or an even number of edges connected to them.
     * Hamiltonian path: it must go through every vertex once. It starts and ends within the same vertex.
+* **Bipartite graph** or just bigraph is a graph whose vertices can be divided into two disjoint and independent sets such that every edge connects a vertex in one set to one in other set.
 
 
 ## Lesson 7: Case studies in algorithms
@@ -296,6 +299,10 @@
 * Brainstorm about different data structures and algorithms.
 * Debugging
 * Possible solution for islands problem: use of deck (double-ended queue), marking each element already explored.
+
+
+## "I don't understand graph theory" notes 
+* Recursive functions look very elegant though they are so expensive. Each time we call a function recursively, it means we call a completely “new” function (see the illustration above). And by “new” we mean that another stack memory space should be “allocated” for the function arguments and local variables. That’s why recursive calls are expensive (the extra stack space allocations and the many function calls) and dangerous (mind the stack overflow) and it is obviously suggested to use iterative implementations. In mission critical systems programming (aircraft, NASA rovers and so on) a recursion is completely prohibited (no stats, no experience, just telling you the rumors).
 
 
 ## Interesting links
