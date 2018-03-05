@@ -1,7 +1,7 @@
 # Udacity course: Algorithms and data structures for technical interviewing
-https://www.udacity.com/course/technical-interview--ud513
-Tutor: Brynn Claypoole (https://www.linkedin.com/in/bclaypoole/)
-Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-interviewing-algorithm
+* https://www.udacity.com/course/technical-interview--ud513
+* Tutor: Brynn Claypoole (https://www.linkedin.com/in/bclaypoole/)
+* Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-interviewing-algorithm
 
 
 ## Lesson 1: Introduction and Efficiency
@@ -22,12 +22,13 @@ Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-inte
     * They don't need to have the same type of objects.
 * **Arrays** are the most common implementation of **Lists**.
     * It differs in different programming languages (some allow different types of elements, some don't, etc.)
-    * An **Array** is a List with some added rules: e.g. each Array has a localtion called an "index".
+    * An **Array** is a List with some added rules: e.g. each Array has a location called an "index".
     * inserting at the end is usually easy (unless it has a specifi size). But doing it in the middle, means to move up to n elements (O(n))
     * deleting an element in the middles can also be inefficient.
     * List time complexity in Python: https://wiki.python.org/moin/TimeComplexity
     * Behind the scenes **a Python list is built as an array**.
         * Internally, a list is represented as an array; the largest costs come from growing beyond the current allocation size (because everything must move), or from inserting or deleting somewhere near the beginning (because everything after that must move).
+    * Use arrays if you need fast element access, use lists if you need fast element insertion/deletion.
 * **Linked Lists**:
     * It's an extension of a List, but it is not an Array.
     * Each elements has a reference to the next element in the list (a pointer to the memory address).
@@ -158,7 +159,7 @@ Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-inte
     - O(n): linear time search, we need to go through all the nodes, because the is no ordering.
     - Deleting
     - Inserting: it's easy, you find an open spot. The worst case: the heigth of the tree.
-* Binary Search Tree (BST):
+* **Binary Search Tree (BST)**:
     - It's a type of Binary Tree.
     - BSTs are sorted so every value on the left of a particular node is smaller than it and every value on the right of a particular node is larger than it.
     - We can do operations like search, insert or delete pretty quickly.
@@ -201,14 +202,19 @@ Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-inte
 
 
 ## Lesson 6: Graphs
+* https://medium.freecodecamp.org/i-dont-understand-graph-theory-1c96572a1401
 * Data structure designed to show relationships between objects.
 * ~ a network
+* There isn’t a fixed and “de jure” structure for graph representation.
+* Whenever you see a tree, you can be sure that it is also a graph.
 * Nodes or "vertex"
 * Connections = edges
+* Degree of a vertex: the number of edges incident connected to the vertex.
 * A Tree is a type of Graph
 * The is no "root" node.
 * Edges can contain information too, not only the Nodes.
 * Edges can have a Direction: "directed graph".
+* Facebook: undirected. Twitter: directed.
 * Graphs can have cycles.
 * DAG: Directed Acyclic Graph >> directed graph with no cycles.
 * "Disconnected Graph": there is some vertex which can not be reached by other vertices
@@ -247,6 +253,7 @@ Forums: https://forums.udacity.com/?forum_path=c/standalone-courses/careers-inte
     * Eulerian path: it travels through every edge at least once. You can finish on a different node to the initial one.
         - It's OK to have two nodes with an odd degree as long as they're the start and end of the path.
         - There is a method (see the video): O(|E|)
+        - Theorem. A finite undirected connected graph is an Euler graph if and only if exactly two vertices are of odd degree or all vertices are of even degree.
     * Eulerian cycle: you traverse every edge only once and you must end at the same node where you started.
         - A graph can only have Eulerian cycle if all vertices have an even degree or an even number of edges connected to them.
     * Hamiltonian path: it must go through every vertex once. It starts and ends within the same vertex.
