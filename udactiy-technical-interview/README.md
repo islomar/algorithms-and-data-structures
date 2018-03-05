@@ -237,7 +237,7 @@
         - Instead of storing ones and zeroes in an adjacency matrix, we can store something “more useful”, like edge weights.
         - It might take too much space, and it stores both the existence and non existence of "links".
 * Graph traversal:
-    * DFS (depth-first search)
+    * **DFS (depth-first search)**
         - A common implementation uses a Stack, so we can store the node visited in the Stack.
         - Then, you pick an edge, follow it, and mark that node as seen (and add it to the Stack).
         - If you have already visited the node, go back to the last node and pick another edge.
@@ -245,11 +245,12 @@
         - O(|E| + |V|) >> the number of edges plus the number of vertices
         - Each edge is visited twice
         - there is another implementation using recursion
-    * BFS (breadth-first search)
+    * **BFS (breadth-first search)**
         - You visit every edge of one node before continuing with the graph.
         - We use a Queue.
         - It's kinda creating a Tree from a Graph (the root is the node with which we start)
         - O(|E| + |V|) >> the number of edges plus the number of vertices
+    * For the iterative implementation of BFS we used a queue, for DFS you will need a stack.
 * Path: a specific route you take in a graph
 * Notable paths:
     * Eulerian path: it travels through every edge at least once. You can finish on a different node to the initial one.
