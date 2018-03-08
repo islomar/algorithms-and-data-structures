@@ -15,6 +15,13 @@
     * Think about best, worst and average scenario (e.g. for iterating through an alphabet, the average scenario would be 13 times)
     * In the end, what it matters is "the relationship": O(16n + 2) or O(29n + 2) means O(n))
     * Always specify your interviewr which case you're talking about (best, average, worst)
+* Algorithms usually fall into the following performance classes:
+    * constant-time, e.g. O(1)
+    * logarithmic, e.g. O(log(n))
+    * linear, e.g. O(n)
+    * polynomial, e.g. O(n^2 + n)
+    * exponential, e.g. O(2^n)
+    * factorial, e.g. O(n!)
 
 
 ## Lesson 2: List-based collections
@@ -300,6 +307,20 @@
 * Brainstorm about different data structures and algorithms.
 * Debugging
 * Possible solution for islands problem: use of deck (double-ended queue), marking each element already explored.
+
+## General
+* Complexity for finding an element:
+    * hashtable is usually constant-time
+    * balanced binary tree is order log(n)
+    * linked list is order N
+    * sorted array is order log(n)
+* Data structures:
+    * **arrays** - I'm talking about C-language and Java-language arrays: fixed-sized, indexed, contiguous structures whose elements are all of the same type, and whose elements can be accessed in constant time given their indices.
+    * **vectors** - also known as "growable arrays" or ArrayLists. Need to know that they're objects that are backed by a fixed-size array, and that they resize themselves as necessary.
+    * **linked lists** - lists made of nodes that contain a data item and a pointer/reference to the next (and possibly previous) node.
+    * **hashtables** - amortized constant-time access data structures that map keys to values, and are backed by a real array in memory, with some form of collision handling for values that hash to the same location.
+    * **trees** - data structures that consist of nodes with optional data elements and one or more child pointers/references, and possibly parent pointers, representing a heirarchical or ordered set of data elements.
+    * **graphs** - data structures that represent arbitrary relationships between members of any data set, represented as networks of nodes and edges.
 
 
 ## "I don't understand graph theory" notes 
