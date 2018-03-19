@@ -14,4 +14,6 @@ For the moment, I'm including lessons learned from several resources:
 * https://eu.udacity.com/course/computability-complexity-algorithms--ud061
 
 ## Interesting links
-* https://sites.google.com/site/steveyegge2/five-essential-phone-screen-questions 
+* http://bigocheatsheet.com/
+* https://sites.google.com/site/steveyegge2/five-essential-phone-screen-questions
+* https://idea-instructions.com/
