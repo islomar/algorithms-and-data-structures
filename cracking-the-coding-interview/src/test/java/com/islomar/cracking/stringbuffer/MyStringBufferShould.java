@@ -13,4 +13,12 @@ public class MyStringBufferShould {
 
         assertThat(sut.toString(), is(""));
     }
+
+    public void generateAStringAfterAppendingOneString() {
+        MyStringBuffer sut = new MyStringBuffer();
+
+        sut.append("a");
+
+        assertThat(sut.toString(), is("a"));
+    }
 }
