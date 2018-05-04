@@ -1,4 +1,4 @@
-package com.islomar.cracking;
+package com.islomar.cracking.chapter1;
 
 import org.testng.annotations.Test;
 

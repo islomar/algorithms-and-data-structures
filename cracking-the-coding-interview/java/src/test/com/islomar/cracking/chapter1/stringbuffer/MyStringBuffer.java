@@ -1,4 +1,4 @@
-package com.islomar.cracking.stringbuffer;
+package com.islomar.cracking.chapter1.stringbuffer;
 
 import java.util.ArrayList;
 import java.util.List;

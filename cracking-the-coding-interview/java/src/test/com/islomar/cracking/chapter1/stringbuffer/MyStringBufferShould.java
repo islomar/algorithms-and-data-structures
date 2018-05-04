@@ -1,4 +1,4 @@
-package com.islomar.cracking.stringbuffer;
+package com.islomar.cracking.chapter1.stringbuffer;
 
 import org.testng.annotations.Test;
 
