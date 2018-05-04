@@ -21,6 +21,21 @@ Trying to improve my algorithmics skills :-)
 ## Data structures
 https://www.youtube.com/playlist?list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
 
+### Arrays and Strings
+* Hash tables:
+  * It has an underlying array and a hash function
+  * The hash function maps the key to an integer, which is the index in the array.
+  * If there are lots of values, collisions: use of key % array_length >> there is a linked list in each array position
+  * It can be implemented with a BST: being balanced, the lookup time would be O(log n)
+    * we may use less space, since we don't need to make a reservation of the whole space up front
+* ArrayLists:
+  * dinamically resizing array
+  * O(1) access
+  * It doubles the space when it reaches the limit: that operation is O(n) but it happens rarely
+* StringBuffer
+  * Concatenating Strings: it makes new copies.
+  * StringBuffer creates an array of strings, and only at the end it copies it to a new String.
+
 ### Hash Tables
 * Highly efficient lookup.
 * In a very simple implementation, it has an array and a hash function. A hash function maps the key to an integer, which indicates the index in the array (index=hash(key)). The object is then stored at that index. But the array should be very large to avoid collisions between the same hash(key) generated.
@@ -88,6 +103,8 @@ O(x + 2x + 3x + 4x + ...nx) = O(xn^2)
 log2( 2^31 ) = 31
 y = log2(x) --> 2^y = x
 
+## General info
+* O(n + 2n + ... + nx) = O(x*n^2)
 
 ## Interesting links
 * http://blog.koalite.com/2013/09/eficiencia-de-distintos-tipos-de-colecciones/
