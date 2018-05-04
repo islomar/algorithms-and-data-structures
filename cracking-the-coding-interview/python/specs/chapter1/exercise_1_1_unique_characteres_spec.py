@@ -2,6 +2,7 @@
 
 from expects import *
 
+# Worst case (time and space) = O(n)
 def has_all_unique_characters(my_string=None):
     if not my_string:
         return True
@@ -12,6 +13,7 @@ def has_all_unique_characters(my_string=None):
         else:
             existing_characters[character] = True
     return True
+
 
 with describe('Chapter 1'):
     with context('Has all unique characters'):
