@@ -1,5 +1,6 @@
 # Cracking the coding interview
 http://www.crackingthecodinginterview.com/
+https://github.com/gaylemcd/CtCI-6th-Edition
 Examples and annotations of the book "Cracking the coding interview".
 Trying to improve my algorithmics skills :-)
 
@@ -35,6 +36,12 @@ https://www.youtube.com/playlist?list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
 * StringBuffer
   * Concatenating Strings: it makes new copies.
   * StringBuffer creates an array of strings, and only at the end it copies it to a new String.
+* Exercises
+  * Has a string all unique characters?
+    * Ask if it's ASCII or Unicode, different size.
+    * If the lenght is bigger than the number of characters, return false.
+  * TBD
+
 
 ### Hash Tables
 * Highly efficient lookup.
@@ -105,6 +112,8 @@ y = log2(x) --> 2^y = x
 
 ## General info
 * O(n + 2n + ... + nx) = O(x*n^2)
+* Double loop: O(n^2)
+* ASCII: 128 characters, 7-8 bits  >> Latin-1 (ISO-8859-1)
 
 ## Interesting links
 * http://blog.koalite.com/2013/09/eficiencia-de-distintos-tipos-de-colecciones/

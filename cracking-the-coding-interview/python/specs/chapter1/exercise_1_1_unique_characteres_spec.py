@@ -15,7 +15,7 @@ def has_all_unique_characters(my_string=None):
     return True
 
 
-# Worst case (time) = ~O(2*n - 1) = O(n)
+# Worst case (time) = ~O(n^2)
 def has_all_unique_characters_v2(my_string=None):
     if not my_string:
         return True
