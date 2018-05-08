@@ -22,7 +22,7 @@ Trying to improve my algorithmics skills :-)
 ## Data structures
 https://www.youtube.com/playlist?list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
 
-### Arrays and Strings
+### Chapter 1: Arrays and Strings
 * Hash tables:
   * It has an underlying array and a hash function
   * The hash function maps the key to an integer, which is the index in the array.
@@ -40,14 +40,34 @@ https://www.youtube.com/playlist?list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
   * Has a string all unique characters?
     * Ask if it's ASCII or Unicode, different size.
     * If the lenght is bigger than the number of characters, return false.
-  * TBD
 
 
-### Hash Tables
-* Highly efficient lookup.
-* In a very simple implementation, it has an array and a hash function. A hash function maps the key to an integer, which indicates the index in the array (index=hash(key)). The object is then stored at that index. But the array should be very large to avoid collisions between the same hash(key) generated.
-* Better: store the object in a linked list at index hash(key)%array_length.
-* Another implementation is a binary search tree. We can then guarantee an O(log n) lookup time, since we can keep the tree balanced.
+### Chapter 2: LinkedLists
+* No constant time access
+* Slow lookup: O(n)
+* Node = data/value + next node pointer + appendToTail()
+* Singly vs Doubly linked list
+* You can not directly acces an element, you have to traverse the list
+* **Runner technique**:
+  * you iterate through the linked list with two pointers simultaneosly, with one ahead of the other.
+  * fast vs slow pointers. The fast one hops several nodes
+* Some linked list problems can be better solved with recursion.
+* Links of interest:
+ * http://algs4.cs.princeton.edu/32bst/
+ * https://www.youtube.com/watch?v=pYT9F8_LFTM
+
+
+### Chapter 3: Stacks and Queues
+* Stack: LIFO
+  * pop()
+  * push()
+  * peek()
+  * You can implement a Stack with a LinkedList, where the head Node is called *top*
+* Queue: FIFO
+  * enqueue()
+  * dequeue()
+  * peek()
+
 
 ### Binary search tree (BST)
 * Efficient structure to organize quick search as well as quick update.
@@ -61,15 +81,6 @@ https://www.youtube.com/playlist?list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
 * Removal:  O(log n)
 * We go from having a space of N, to N/2, N/4... until we only have 1 (the match). That means we would have up to log n steps.
 
-### LinkedList
-* Tend not to do very well with accessing and sorting numbers.
-* Search:   O(n)
-* Insert:   O(1) at head, O(n) at tail.
-* Removal:  O(n)
-* Links of interest:
- * http://algs4.cs.princeton.edu/32bst/
- * https://www.youtube.com/watch?v=pYT9F8_LFTM
-
 ### Array
 * Searching is not optimal: you might need to look at all the elements of the array until finding the one loooked.
 * Removal means that you have to shift all the records to the right of element removed.
@@ -82,8 +93,6 @@ https://www.youtube.com/playlist?list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
  * Insert: O(n)
  * Removal: O(n)
 
-### ArrayList (dynamically resizing Array)
-It is an array that resizes itself as needed while stil providing O(1) access.
 
 ### Binary trees
 Do fairly well with ordering. If the binary search tree is perfectly balanced, the top might be the median. But if there's an even number of elements, the median is actually the average of the middle two elements.
@@ -91,13 +100,6 @@ Do fairly well with ordering. If the binary search tree is perfectly balanced, t
 
 ### Heap
 Really ood at basic ordering and keeping track of max and mins.
-
-### String
-Sorting the chars of a String takes O(n log(n))
-
-## Big-O-notation
-http://en.wikipedia.org/wiki/Big_O_notation
-O(x + 2x + 3x + 4x + ...nx) = O(xn^2)
 
 ## Statistics
 * **Median**: the median is the number separating the higher half of a data sample, a population, or a probability distribution, from the lower half.
@@ -111,9 +113,26 @@ log2( 2^31 ) = 31
 y = log2(x) --> 2^y = x
 
 ## General info
-* O(n + 2n + ... + nx) = O(x*n^2)
+* http://en.wikipedia.org/wiki/Big_O_notation
+* O(n + 2n + ... + nx) = O(x*n^2)  >>> cost of concatenating a list of n words with x characters each word
+  * new_word = word + word >>> it requires to copy each word, character by character
 * Double loop: O(n^2)
 * ASCII: 128 characters, 7-8 bits  >> Latin-1 (ISO-8859-1)
+* **Recursive algorithms** take at elast O(n) space, where n is the depth of the recursive cal. All recursive algorithms can be implemented iteratively, although they may be much more complex.
+
+
+## Questions for the challenge
+* Do a specific example. Start with the simplest one and add complexity from there on.
+* Which are the input parametsrs? Which are the expected outcome? (number of them, types, etc.)
+* Possible restrictions: ¿specific type of the elements? E.g. only letters,
+* Case sensitive?
+* Corner cases
+* characters: encoding? ASCII, UTF-8?
+* Take into account maximum number of different elements: guard clause
+* Do we know the size of the structure? (e.g. the size of a linked list)
+* Think about optimizing space: is it important?
+* Can we fix from the beginning the size of the strcture?
+
 
 ## Interesting links
 * http://blog.koalite.com/2013/09/eficiencia-de-distintos-tipos-de-colecciones/

@@ -28,7 +28,7 @@
     * Fast lookup.
     * A container object that holds a fixed number of values of a single type.
     * The length of an array is established the array is created.
-    * Each element has an index.
+    * Each element has an **index**.
     * Lookup: O(1)
 
 
@@ -62,7 +62,7 @@
     * O(n log(n))
         * Iterate over each element (O(n)) and build a BST (O(log(n)))
     * https://www.youtube.com/watch?v=MtQL_ll5KhQ
-    * https://www.youtube.com/watch?v=t0Cq6tVNRBA 
+    * https://www.youtube.com/watch?v=t0Cq6tVNRBA
     * https://www.youtube.com/watch?v=PqS5T9ZKZno
     * Functions used:
         * generate-tree()
