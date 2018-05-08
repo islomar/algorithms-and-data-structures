@@ -42,6 +42,7 @@ def calculate_secondary_diagonal(matrix_size, matrix):
 
 
 # https://www.hackerrank.com/challenges/diagonal-difference/problem
+# https://www.hackerrank.com/challenges/diagonal-difference/submissions/code/72383656
 with describe('Diagonal difference'):
     with context('When the matrix has only a 0'):
         with it('returns 0'):
@@ -69,7 +70,8 @@ with describe('Diagonal difference'):
 
     # Sample Output
     # 15
-    # Solution: O(2n) ~ O(n)
+    # Solution >> Time complexity = O(2n) ~ O(n)
+    # Solution >> Space complexity = O(2n) ~ O(n)
     with context('When the matrix has size 3'):
         with it('returns the right result'):
             matrix ="3\n11 2 4\n4 5 6\n10 8 -12"
