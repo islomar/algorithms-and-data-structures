@@ -8,28 +8,36 @@ def calculate_diagonal_difference(input_rows):
     matrix_size = int(all_lines[0])
     if matrix_size == 1:
         return int(all_lines[1])
-    matrix = convert_to_matrix(all_lines[1:])
-    primary_diagonal = []
-    secondary_diagonal = []
-    for index in range(matrix_size):
-        diagonal_element = int(matrix[index][index])
-        primary_diagonal.append(diagonal_element)
 
-    secondary_index = matrix_size - 1
-    for index in range(matrix_size):
-        secondary_diagonal_element = int(matrix[index][secondary_index])
-        secondary_diagonal.append(secondary_diagonal_element)
-        secondary_index -= 1
+    matrix = convert_to_matrix(all_lines[1:])
+    primary_diagonal = calculate_primary_diagonal(matrix_size, matrix)
+    secondary_diagonal = calculate_secondary_diagonal(matrix_size, matrix)
 
     result = sum(primary_diagonal) - sum(secondary_diagonal)
     return abs(result)
 
-
 def convert_to_matrix(all_lines):
     result = []
     for line in all_lines:
-        result.append(line.split())
+        result.append(list(map(lambda element: int(element), line.split())))
     return result
+
+def calculate_primary_diagonal(matrix_size, matrix):
+    primary_diagonal = []
+    for index in range(matrix_size):
+        diagonal_element = matrix[index][index]
+        primary_diagonal.append(diagonal_element)
+    return primary_diagonal
+
+
+def calculate_secondary_diagonal(matrix_size, matrix):
+    secondary_diagonal = []
+    secondary_index = matrix_size - 1
+    for index in range(matrix_size):
+        secondary_diagonal_element = matrix[index][secondary_index]
+        secondary_diagonal.append(secondary_diagonal_element)
+        secondary_index -= 1
+    return secondary_diagonal
 
 
 
@@ -61,6 +69,7 @@ with describe('Diagonal difference'):
 
     # Sample Output
     # 15
+    # Solution: O(2n) ~ O(n)
     with context('When the matrix has size 3'):
         with it('returns the right result'):
             matrix ="3\n11 2 4\n4 5 6\n10 8 -12"
