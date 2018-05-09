@@ -112,13 +112,53 @@ Really ood at basic ordering and keeping track of max and mins.
 log2( 2^31 ) = 31
 y = log2(x) --> 2^y = x
 
+
+## Chapter 9: Recursion and Dynamic Programming
+* Recursive solutions, by definition, are built off solutions to sub-problems.
+* Bottom-Up recursion: start solving it for one element, then two, etc.
+* Top-Down recursion: think about how to divide the problem for case N into subproblems.
+* Dynamic programming
+
+
+## Chapter 15: Databases
+* https://www.sohamkamani.com/blog/2016/07/07/a-beginners-guide-to-sql/
+* Normalized databases are designed to minimize redundancy, while denormalized databases are designed to optimize read time.
+* Dernormalization is commonly used to create highly scalable systems.
+* In a SQL statement, we can only select values that are in an aggregate function or in the GROUP BY clause.
+* JOIN types:
+  * https://www.w3schools.com/sql/sql_join.asp
+  * (INNER) JOIN: Returns records that have matching values in both tables
+  * LEFT (OUTER) JOIN: Return all records from the left table, and the matched records from the right table
+  * RIGHT (OUTER) JOIN: Return all records from the right table, and the matched records from the left table
+  * FULL (OUTER) JOIN: Return all records when there is a match in either left or right table
+* Explicit JOIN: `FROM Students INNER JOIN Teachers`
+* Implicit JOIN  `FROM Students, Teachers`
+* `WHERE` and `ON` are only simmilar when using `INNER JOIN`. In outer joins:
+  * `ON`: Before joining. Records (from right table) will be filtered before joining. This may end up as null in the result (since OUTER join).
+  * `WHERE`: After joining. Records will be filtered after join has taken place.
+  * Example:
+    * ```
+    SELECT documents.name, downloads.id
+      FROM documents
+        LEFT OUTER JOIN downloads
+          ON documents.id = downloads.document_id
+            AND username = 'sandeep'
+    ```
+    * It returns ALL documents names (LEFT JOIN). Those with a matching downloads id, will get also the downloads.id.
+* **Aggregations** are used to convert many rows into a single row.
+  * Almost all aggregations we do come with the `GROUP BY` statement and using a function (sum, count, etc.) on the `SELECT`
+* Whenever you write a `GROUP BY` clause, make sure that anything in the SELECT clause is either an aggregate function or contained within the `GROUP BY` clause.
+          ```
+
 ## General info
 * http://en.wikipedia.org/wiki/Big_O_notation
 * O(n + 2n + ... + nx) = O(x*n^2)  >>> cost of concatenating a list of n words with x characters each word
   * new_word = word + word >>> it requires to copy each word, character by character
 * Double loop: O(n^2)
+* Being N elements, if for each one you have to make 2 calls: O(2^n)
 * ASCII: 128 characters, 7-8 bits  >> Latin-1 (ISO-8859-1)
 * **Recursive algorithms** take at elast O(n) space, where n is the depth of the recursive cal. All recursive algorithms can be implemented iteratively, although they may be much more complex.
+* Dynamic programming: recursion + cache  >>  memoization (https://en.wikipedia.org/wiki/Memoization)
 
 
 ## Questions for the challenge
