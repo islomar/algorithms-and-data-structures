@@ -117,7 +117,8 @@ y = log2(x) --> 2^y = x
 * Recursive solutions, by definition, are built off solutions to sub-problems.
 * Bottom-Up recursion: start solving it for one element, then two, etc.
 * Top-Down recursion: think about how to divide the problem for case N into subproblems.
-* Dynamic programming
+* Dynamic programming = memoization (recursion + cache, typical for Fibonacci)
+* Think how to build the solution to f(n) from the solution to f(n-1). Think of a base case.
 
 
 ## Chapter 15: Databases
@@ -159,6 +160,8 @@ y = log2(x) --> 2^y = x
 * ASCII: 128 characters, 7-8 bits  >> Latin-1 (ISO-8859-1)
 * **Recursive algorithms** take at elast O(n) space, where n is the depth of the recursive cal. All recursive algorithms can be implemented iteratively, although they may be much more complex.
 * Dynamic programming: recursion + cache  >>  memoization (https://en.wikipedia.org/wiki/Memoization)
+* Factorial. 4! = 4 * 3 * 2 * 1
+  * Used for permutations. Number of different ways to order 4 different letters = 4!
 
 
 ## Questions for the challenge
