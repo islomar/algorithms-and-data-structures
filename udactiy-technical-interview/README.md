@@ -194,7 +194,7 @@
     * The most unbalanced tree is a linked list.
     * A self-balancing tree is one which tries to minimize the number of levels that it uses.
     * It runs some algorithms during insert and delete to keep itself balanced; it also might store some additional property.
-    * Red-black treee:
+    * **Red-black treee*:
         - It's an extension of a Binary Tree.
         - Nodes have an additional property: a color (black or red)
         - Rules:
@@ -323,7 +323,7 @@
     * **graphs** - data structures that represent arbitrary relationships between members of any data set, represented as networks of nodes and edges.
 
 
-## "I don't understand graph theory" notes 
+## "I don't understand graph theory" notes
 * Recursive functions look very elegant though they are so expensive. Each time we call a function recursively, it means we call a completely “new” function (see the illustration above). And by “new” we mean that another stack memory space should be “allocated” for the function arguments and local variables. That’s why recursive calls are expensive (the extra stack space allocations and the many function calls) and dangerous (mind the stack overflow) and it is obviously suggested to use iterative implementations. In mission critical systems programming (aircraft, NASA rovers and so on) a recursion is completely prohibited (no stats, no experience, just telling you the rumors).
 
 
