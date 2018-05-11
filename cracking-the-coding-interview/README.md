@@ -113,12 +113,103 @@ log2( 2^31 ) = 31
 y = log2(x) --> 2^y = x
 
 
+## Chapter 4: Trees and Graphs
+TBD
+
+
+### Chapter 5: Bit manipulation
+* Operations:  ^, ~, &, |
+* ^ is XOR (1 only if both bits are different)
+* ~ is a not (negation)
+* `xxxx >> n`: it clears the n leftmost bits. E.g. for 2 = `00xx`
+* `1101 >> 2 = 0011`
+* `0110 + 0110 = 0110 * 2 = shift 0110 left by 1 = 1100`
+* `0100 * 0011 = 0011 * 4 = 0011 * 2^n = move 0011 n times to the left = 1100`
+* `a^(~a) = 111...1`
+* `^0` = a sequence of 1s
+* `x & (~0 << n)` = it clears the rightmost bits of x
+* `x ^ 1s = ~x`
+* `x ^ x = 0`
+* `x & 0s = 0`
+* `x & 1s = x`
+* `x | 0s = x`
+* `x | 1s = 1s`
+* `x | x = x`
+* ```
+boolean getBit(int num, int i) {
+  return ((num & (1 << i)) != 0);
+}
+```
+* ```
+int setBit(int num, int i) {
+  return num | (1 << i);
+}
+```
+* ```
+int clearBit(int num, int i) {
+  int mask = ~(1 << i);
+  return num & mask;
+}
+```
+* ```
+int updateBit(int num, int i, int v) {
+  int mask = ~(1 << i);
+  return (num & mask) | (v << i);
+}
+```
+
+
+## Chapter 7: Mathematics and Probability
+* **gcd**: greatest common divisor (máximo común divisor)
+  * mayor divisor común de todos los número. Mayor número entero, común a todos, que permite dividirlos a todos
+  * Primero sacar los números primos. Después tomar los factores comunes (de todos los números) con menor exponentes y multiplicarlos.
+  * E.g. para 6 y 32 es 2 (6= 2*3, 32 = 2^5 => factor común con menor exponente=2).
+  * E.g. para 40, 36 y 12 es 4 (40=2^3*5, 36=2^2 * 3^2, 12=2^2*3 => factor común con menor exponente=2^2=4).
+* **lcm**: least common multiple (mínimo común múltiplo)
+  * Número más pequeño de los múltiplos comunes.
+  * Primero, descomponerlos en sus primos. Después, multiplicar los factores comunes y no comunes con mayor exponente.
+  * E.g. para 6 y 4 sería 12 (6=2*3, 4=2^2, 12=2^2 * 3).
+* gcd(x, y) * lcm(x, y) = x * y
+* Checking for primality: loop from i=2 to i < n (but it's enough up to Math.sqrt(n))
+* Generating a list of primes: the sieve of Eratosthenes
+  * https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+
+
 ## Chapter 9: Recursion and Dynamic Programming
 * Recursive solutions, by definition, are built off solutions to sub-problems.
 * Bottom-Up recursion: start solving it for one element, then two, etc.
 * Top-Down recursion: think about how to divide the problem for case N into subproblems.
 * Dynamic programming = memoization (recursion + cache, typical for Fibonacci)
 * Think how to build the solution to f(n) from the solution to f(n-1). Think of a base case.
+
+
+### Chapter 10: Scalability and memory limits
+* The step-by-step approach
+  * Step 1: make believe. Think about the solution for "not so much" data.
+  * Step 2: get real
+* Demonstrate you can analyze and solve problems: poke holes in your own solution
+* Dividing lots of data:
+  * by order of appearance
+  * by hash value
+  * by actual value
+  * arbitrarily
+* We need to understand whether this is a one time operation
+
+
+## Chapter 11: Sorting and searching
+TBD
+
+
+### Chapter 12: Testing
+* Who will use it? And why?
+* What are the use cases?
+  * normal case
+  * extremes
+  * nulls and "illegal" input
+  * strange input
+* What are the bounds of use?
+* What are the stress/failure conditions?
+* troubleshooting questions
 
 
 ## Chapter 15: Databases
@@ -149,7 +240,33 @@ y = log2(x) --> 2^y = x
 * **Aggregations** are used to convert many rows into a single row.
   * Almost all aggregations we do come with the `GROUP BY` statement and using a function (sum, count, etc.) on the `SELECT`
 * Whenever you write a `GROUP BY` clause, make sure that anything in the SELECT clause is either an aggregate function or contained within the `GROUP BY` clause.
-          ```
+
+
+## Chapter 16: Threads and locks
+A process is an independent entity to which system resources (e.g. CPU time and memory) are allocated.
+* Each process is executed in a separate address space, and one process cannot access the variables and data structures of another process.
+* A thread exists within a process and shares the process' resources (including its heap space).
+* A thread is a particular execution of a process. Each thread still has its own resgisters and its own stack, but other threads can read and write the heap memory.
+* A context switch is the time spent switching between two processes.
+### Threads in Java
+* Every thread in Java is created and controlled by a unique object of the java.lang.Thread.
+* To create and use a thread using a Runnable interface (with a run() method to be implemented):
+  * Create a class which implements the `Runnable`interface.
+  * Create an object of type `Thread` by passing a `Runnable`object as argument.
+  * Start the Thread.
+* Alternatively, we can create a thread by extending the `Thread` class.
+* Implementing the `Runnable`interface may be preferable:
+  * Java does not support multiple inheritance.
+  * A class might only be interested in being runnable, and therefore, inherinting the full overhead of the Thread class would be excessive.
+### Synchronization and locks
+* Keyword `synchronized`:
+  * Synchronizad methods: it can be applied to methods and code blocks, and restricts multiple threads from executing the code simultaneously **on the same object**. So, different instances wouldn't be restricted.
+    * blocks: `synchronized(this){..}`. Only one thread per instance can execute the block.
+  * Static methods synchronize on the **class lock**. So, different instances would be restricted.
+* Keyword `lock`:
+  * More granular control, it's a monitor used to synchronize acces to a shared resource by associating with the lock.
+  * `Lock lock = new ReentreatLock()` >> `lock.lock()` >> `lock.unlock()`
+* Deadlocks: it can happen when there is a circular wait, mutual exlusion, hold and wait and no preemption.
 
 ## General info
 * http://en.wikipedia.org/wiki/Big_O_notation
@@ -162,7 +279,11 @@ y = log2(x) --> 2^y = x
 * Dynamic programming: recursion + cache  >>  memoization (https://en.wikipedia.org/wiki/Memoization)
 * Factorial. 4! = 4 * 3 * 2 * 1
   * Used for permutations. Number of different ways to order 4 different letters = 4!
-
+* Vocabulary
+  * restar: substract
+  * sumar: add
+  * multiplicar: multiply
+  * 2^3 = two to the three, two to the third, two to the power of three
 
 ## Questions for the challenge
 * Do a specific example. Start with the simplest one and add complexity from there on.
