@@ -6,7 +6,7 @@ Beyond the goal of hypothetical questions in some recruitment processes (which I
 For the moment, I'm including lessons learned from several resources:
 * The ["Cracking the coding interview" book](./cracking-the-coding-interview)
 * The free Udacity course ["Algorithms and data structures for technical interviewing"](./udactiy-technical-interview)
- *Packpub [](./)
+* Packtpub ["Learning algorithms and data structures"](./packtpub-learning-algorithms-and-data-structures)
 
 ## More interesting courses
 * https://codefights.com/interview-practice
