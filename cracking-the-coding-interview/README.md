@@ -307,8 +307,14 @@ A process is an independent entity to which system resources (e.g. CPU time and 
   * 2^3 = two to the three, two to the third, two to the power of three
   * breadth = ancho, anchura, amplitud
 
-## Questions for the challenge
 
+## How to read
+* O(n) is read "O of n"
+* X^3 is read "x cube"
+* 2^x is read "two times x"
+
+
+## Questions for the challenge
 * Do a specific example. Start with the simplest one and add complexity from there on.
 * Which are the input parametsrs? Which are the expected outcome? (number of them, types, etc.)
 * Possible restrictions: ¿specific type of the elements? E.g. only letters,
