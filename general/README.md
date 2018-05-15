@@ -18,7 +18,26 @@
     * E.g. 1/3 + 1/3 + 1/3 = 0.9999999
     * E.g. 0.1 + 0.2 = 0.30000000000001
     * Usually, that is not problem. BUT it is for Currency, so don't use float there.
+* **one's complement**
+    * Swap 1<---->0
+    * E.g: `01110010` -> `10001101`
+* **two's complement**
+    * It helps to represent negative values
+    * The most significative represents the sign (the one most to the left). 1 = negative
+    * Two ways
+        * one's complement + 1
+            * E.g. for -10:
+                * 10 = `00001010`
+                * 1's complement = `11110101`
+                *  + 1 = `11110110`
+        * From right to left: find the first 1, keep it, and from there to the left swap 1-> 0 and 0 -> 1
+            * E.g. -10
+                * +10   = `00001010`
+                * Swap  = `11110110`
 
+## Fibonacci
+* https://stackoverflow.com/questions/494594/how-to-write-the-fibonacci-sequence
+* Without memoization: O(2^n)
 
 ## Java types
 https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html

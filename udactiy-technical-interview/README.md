@@ -111,7 +111,9 @@
     * If we know that we're a getting an almost sorted array, we don't want to use Quick sort, since we would get O(n^2)
     * Space = O(1)
     * https://en.wikipedia.org/wiki/Quicksort
-
+* **Heapsort**
+    * https://en.wikipedia.org/wiki/Heapsort
+    * Although somewhat slower in practice on most machines than a well-implemented quicksort, it has the advantage of a more favorable worst-case O(n log n) runtime. Heapsort is an in-place algorithm.
 
 ## Lesson 4: Maps and Hashing
 * **Sets**
@@ -176,6 +178,7 @@
 * Heaps:
     * "heap" means "apilar, pila, montón".
     * Trees (it doesn't have to be a binary tree? - but it has 2 children at most) where the elements are sorted in increasing or decreasing order.
+    * A binary heap can be represented with an Array.
     * The root is either the maximum or the minimum value.
     * Max heap: a parent must always have a higher value than its children.
         - A function for getting the peek (max value) has O(1) complexity.
@@ -192,20 +195,27 @@
 * Self-balancing trees:
     * A balanced tree has nodes condensed only to a few levels.
     * The most unbalanced tree is a linked list.
-    * A self-balancing tree is one which tries to minimize the number of levels that it uses.
+    * A **self-balancing binary search tree** is one which tries to minimize the number of levels that it uses.
     * It runs some algorithms during insert and delete to keep itself balanced; it also might store some additional property.
     * **Red-black treee*:
-        - It's an extension of a Binary Tree.
-        - Nodes have an additional property: a color (black or red)
+        - It's an extension of a Balanced Binary Tree.
+        - Nodes have an additional property (one bit): a color (black or red)
         - Rules:
             - It exists null leaf nodes (which are drawed as black).
             - The root node must be black.
-            - If a node is red, the children must be black.
+            - If a node is red, the children must be black (only its children, not necessarily its grandchildren).
             - Every path from a node to its descendeant null nodes must contain the same number of black nodes.
+        - Search, Insert and Remove = O(log(n))
+        - Space complexity = O(n)
+        - Search is not different to a BST
+        - Insert and Remove implies rotation, in order to keep the rules.
         - Insert:
             - There are 5 cases, review the video!
             - If your parent and sibling are both red, transform them to black, and the grandparent becomes red (unless the grandparent is the root).
             - Average and worst cases: O(log(n))
+        - More:
+            - Shortest path: all black nodes
+            - Longest path: alternate red and black nodes.
 
 
 ## Lesson 6: Graphs
@@ -311,7 +321,8 @@
 ## General
 * Complexity for finding an element:
     * hashtable is usually constant-time
-    * balanced binary tree is order log(n)
+    * balanced binary tree is O(log(n))
+        * Guaranteed height of O(log(n))
     * linked list is order N
     * sorted array is order log(n)
 * Data structures:
