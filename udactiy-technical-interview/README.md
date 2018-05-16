@@ -57,7 +57,7 @@
     * dequeue: deleting an element from the head
     * peek: look at the head element, but you don't remove it
     * **Dequeue = Double ended queue**: it's a queue that goes in both ways. You can enqueue and dequeue from either end.
-    * A **deck** is kind of a generalized version of both stacks and queues.
+        * A **deck** is kind of a generalized version of both stacks and queues.
     * **Priority queue**: you include a priority to every element that you insert in the queue.
         * When you dequeue, you remove the element with the highest priority.
         * If the elements have the same priority, the oldest element is the one that gets dequeued first.
@@ -101,15 +101,19 @@
     * https://algs4.cs.princeton.edu/22mergesort/
 * **Quick sort**
     * Divide and conquer
-    * Pick a value (pivot): move all the values bigger, to its right. And move all the values lower than the pivot, to the left.
-    * The convention is to pick the last element as your pivot.
-    * Partitioning: reorder the array so that all elements with values less than the pivot come before the pivot, while all elements with values greater than the pivot come after it
-    * Recursively apply the above steps to the sub-array of elements with smaller values and separately to the sub-array of elements with greater values.
+    * In-place sort. Space = O(1)
+    * Steps:
+        1. Choose a pivot (the convention is to pick the last element)
+        2. Iterate from the first value, moving all values larger to the right of the pivot: move the pivot to its position-1, the value in index-1 to position 0 and the one in position 0 to the pivot position
+        3. Continue doing step 2.
+        4. When the pivot is at its right (all the values on the left are smaller), we repeat the algorithm for both parts (the part on the left of the pivot and the part on the right), starting from step 1.
     * Efficiency:
-        * worst case: O(n^2)
+        * Worst case O(n^2): the pivots are already the biggest elements (so we need to compare with all the rest all the time).
         * Average and best case: O(n*log(n))
     * If we know that we're a getting an almost sorted array, we don't want to use Quick sort, since we would get O(n^2)
-    * Space = O(1)
+    * Improvements:
+        * we can have two independent processes running each half sorting in parallel.
+        * instead of selecting the last element as pivot, select the median of the last three (better sense of the values, more probability of moving to the middle)
     * https://en.wikipedia.org/wiki/Quicksort
 * **Heapsort**
     * https://en.wikipedia.org/wiki/Heapsort
@@ -340,6 +344,7 @@
 
 ## Interesting links
 * Watch all kind of sorting algorithms in action:  https://visualgo.net/en/sorting?slide=1
+* http://btechsmartclass.com/DS/U3_T1.html
 * Live mock interview:
     * https://www.pramp.com/#/
     * https://www.pramp.com/tryout
