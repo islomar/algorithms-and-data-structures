@@ -74,7 +74,7 @@
     * Searching Sorted List Visualization: https://www.cs.usfca.edu/~galles/visualization/Search.html
 * **Recursion**:
     * A recursion function needs:
-        * to call itself at some poing
+        * to call itself at some point
         * a base case: it's like an exit condition.
         * Alter the input parameter at some point
 * **Intro to sorting**
@@ -132,7 +132,7 @@
     * If we get the same hash value for two values, that's a collision:
         * you can change your hash function
         * or you can store several values in the index: we would call that space a "bucket".
-    * Originally we would have O(1), but with the bucket approach, we would have O(m) for the worst case.
+    * Originally we would have O(1), but with the bucket approach, we would have O(m) for the worst case (m=size of the bucket).
     * When we're talking about hash tables, we can define a **load factor**:
         * Load Factor = Number of Entries / Number of Buckets
         * The purpose of a load factor is to give us a sense of how "full" a hash table is. For example, if we're trying to store 10 values in a hash table with 1000 buckets, the load factor would be 0.01, and the majority of buckets in the table will be empty. We end up wasting memory by having so many empty buckets, so we may want to rehash, or come up with a new hash function with less buckets. We can use our load factor as an indicator for when to rehash—as the load factor approaches 0, the more empty, or sparse, our hash table is.
@@ -156,27 +156,30 @@
 * No children: leaves or "external nodes".
 * Parent notde = internal node.
 * Connections = edges.
-* Patj = group of connections taken together.
+* Path = group of connections taken together.
 * Height of a node: number of edges between it and the furthest leaf of the tree.
 * A leaf has a heigth of zero. The parent of a leaf has a heigth of one.
 * Depth of a node: number of edges to the root.
 * Tree traversal:
     - DFS: depth-first search.
+         - The priority is to traverse/visit the children left
          - Pre-order traversal: we check off the nodes explored as soon as we pass through it.
-         - In order: we only check off a node after having explored its left wing.
+         - In order: we only check off a node after having explored its left wing. We move from left to right (in that order)
          - Post order: we only check off a node after having visited all of its descendants.
     - BFS: breadth-first search. Level order traversal
+        - The priority is to traverse/visit the siblings left
 * Perfect tree: every node (except leaves) has 2 children
 * Binary trees:
     - Parents have at most 2 children.
-    - O(n): linear time search, we need to go through all the nodes, because the is no ordering.
-    - Deleting
-    - Inserting: it's easy, you find an open spot. The worst case: the heigth of the tree.
+    - Search: O(n), linear time search, we need to go through all the nodes, because the is no ordering.
+    - Deleting: O(n)
+    - Inserting: O(log(n)) it's easy, you find an open spot. The worst case: the heigth of the tree.
 * **Binary Search Tree (BST)**:
     - It's a type of Binary Tree.
     - BSTs are sorted so every value on the left of a particular node is smaller than it and every value on the right of a particular node is larger than it.
     - We can do operations like search, insert or delete pretty quickly.
     - Search: the heighth of the tree, O(log(n))
+    - Insert: O(log(n))
     - Unbalanced binary tree.
     - Worst case: e.g. only nodes on the left or on the right (O(n))
 * Heaps:
@@ -188,11 +191,14 @@
         - A function for getting the peek (max value) has O(1) complexity.
     * Min heap: a parent must always have a lower value than its children.
     * A heap tree must be a "complete" tree: all levels, except the last one, must be full. The right most leaf will be empty until the whole row has been filled (it's filled from left to right).
-    * Search: there is no guarentee that the left branch will be higher or lower than the number searched. The cost is linear, O(n).
+    * Search: O(n) there is no guarentee that the left branch will be higher or lower than the number searched. The cost is linear.
     * Insert: we just insert the element in a free spot, and then we heapify:
         - Heapify: it's the operation where we reorder the tree based on the heap property. We compare the element with its parent: if the parent is lower, then we just swap the elements.
-    * Extract (delete): take the rightmost element, and then compare with its children and swap when necessary.
-    * Worst case: O(log(n)) >> height of the tree
+    * Extract (delete):
+        * Similar to heapify.
+        * Take a leaf and move it to the deleted element.
+        * Then compare with its children and swap when necessary.
+    * Worst case for insert and delete: O(log(n)) >> height of the tree
     * Usually represented as Arrays.
         - Not every array can be represented as a Tree.
         - Storing in an Array saves space: we only require the value and index. In a tree-node-like element, we would need left, right, etc.
