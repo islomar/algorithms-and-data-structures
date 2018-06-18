@@ -184,7 +184,7 @@
     - Worst case: e.g. only nodes on the left or on the right (O(n))
 * Heaps:
     * "heap" means "apilar, pila, montón".
-    * Trees (it doesn't have to be a binary tree? - but it has 2 children at most) where the elements are sorted in increasing or decreasing order.
+    * Trees (it doesn't have to be a binary tree, it could have more than 2 children) where the elements are sorted in increasing or decreasing order.
     * A binary heap can be represented with an Array.
     * The root is either the maximum or the minimum value.
     * Max heap: a parent must always have a higher value than its children.
@@ -209,6 +209,7 @@
     * It runs some algorithms during insert and delete to keep itself balanced; it also might store some additional property.
     * **Red-black treee*:
         - It's an extension of a Balanced Binary Tree.
+        * TreeSet (Java) is a red-black tree
         - Nodes have an additional property (one bit): a color (black or red)
         - Rules:
             - It exists null leaf nodes (which are drawed as black).
@@ -383,3 +384,11 @@
         - https://github.com/h5bp/Front-end-Developer-Interview-Questions
 * Blog Posts
     * Five Essential Phone Screen Questions: https://sites.google.com/site/steveyegge2/five-essential-phone-screen-questions
+
+
+## Repasar
+* Estructuras de estructura para un tree o heap, etc.
+    * Stack: you can do it with a LinkedList
+    * Queue: you can do it with an array
+* Ejemplos de uso de trees.
+*
