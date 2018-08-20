@@ -15,6 +15,7 @@ For the moment, I'm including lessons learned from several resources:
 
 ## Interesting links
 * http://bigocheatsheet.com/
+* https://dev.to/fahimulhaq/top-8-data-structures-for-coding-interviews-and-practice-interview-questions-2pb
 * https://sites.google.com/site/steveyegge2/five-essential-phone-screen-questions
 * https://idea-instructions.com/
 * https://github.com/jwasham/coding-interview-university
