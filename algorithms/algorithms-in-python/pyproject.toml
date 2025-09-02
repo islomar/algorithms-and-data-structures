@@ -4,7 +4,12 @@ version = "0.1.0"
 description = "Playground for learning about algorithms and data structures"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = [
+
+[dependency-groups]
+dev = [
     "pytest>=8.0.0",
     "ruff>=0.12.11",
+    "doublex>=1.9.6.1",
+    "doublex-expects>=0.7.1",
+    "expects>=0.9.0",
 ]
