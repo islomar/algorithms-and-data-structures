@@ -4,9 +4,9 @@ from typing import List
 
 class NumArray:
 
-    def __init__(self, elements: List[int]):
-        self._elements = elements
-        self._precomputed_sums = self._initialize_precomputed_sums(elements)
+    def __init__(self, nums: List[int]):
+        self._nums = nums
+        self._precomputed_sums = self._initialize_precomputed_sums(nums)
 
     @staticmethod
     def _initialize_precomputed_sums(elements: List[int]):
@@ -20,7 +20,7 @@ class NumArray:
     def sum_range(self, left: int, right:int) -> int:
         result: int = 0
         for i in range(left, right + 1):
-            result += self._elements[i]
+            result += self._nums[i]
         return result
 
     def sum_range_improved(self, left: int, right:int) -> int:
