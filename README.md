@@ -8,6 +8,10 @@ For the moment, I'm including lessons learned from several resources:
 * The free Udacity course ["Algorithms and data structures for technical interviewing"](./udactiy-technical-interview)
 * Packtpub ["Learning algorithms and data structures"](./packtpub-learning-algorithms-and-data-structures)
 
+## Algorithms
+### Prefix Sum
+- [My notes](https://docs.google.com/document/d/1l8WkabgPHF776PO5JiJWpNTdqrA2yka32KxJQX6xekQ/edit?tab=t.0#heading=h.vas57d76xzer)
+
 ## More interesting courses
 * https://codefights.com/interview-practice
 * https://eu.udacity.com/course/intro-to-algorithms--cs215
