@@ -10,7 +10,7 @@ def subarray_sum_equals_k(nums: list[int], k: int) -> int:
             number_of_solutions += 1
         acc = num
         index = i
-        while ((acc < k) and (index < len(nums) - 1)):
+        while (index < len(nums) - 1):
             acc += nums[index + 1]
             if acc == k:
                 number_of_solutions += 1
