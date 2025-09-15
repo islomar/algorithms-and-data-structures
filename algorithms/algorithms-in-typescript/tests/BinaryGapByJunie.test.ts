@@ -22,7 +22,29 @@ import {describe, expect, it} from "vitest";
  * Note: There is no input array here; we iterate over the bits of N’s binary form.
  */
 function binaryGapByJunieFor(aNumber: number): number {
+    if (aNumber <= 0) return 0;
 
+    // Skip trailing zeros; gaps must be bounded by a '1' on the right.
+    while ((aNumber & 1) === 0) {
+        aNumber >>= 1;
+        if (aNumber === 0) return 0;
+    }
+
+    let maxGap = 0;
+    let currentGap = 0;
+
+    // Scan remaining bits from LSB to MSB.
+    while (aNumber > 0) {
+        if ((aNumber & 1) === 0) {
+            currentGap++;
+        } else {
+            if (currentGap > maxGap) maxGap = currentGap;
+            currentGap = 0;
+        }
+        aNumber >>= 1;
+    }
+
+    return maxGap;
 }
 
 describe('BinaryGap', () => {
