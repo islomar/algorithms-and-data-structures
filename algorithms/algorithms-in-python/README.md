@@ -9,10 +9,45 @@
     - https://leetcode.com/problems/range-sum-query-immutable/solutions/7050842/prefix-sum-range-sum-query-python-java-t-c8rr/
     - [Range Sum Query Immutable - Leetcode 303 - Python](https://www.youtube.com/watch?v=2pndAmo_sMA) ([NeetCodeIO](https://www.youtube.com/@NeetCodeIO))
 - Contiguous Array (LeetCode #525)
-  - **PENDING**
+  - https://leetcode.com/problems/contiguous-array/description/
+    - Given a binary array nums, return the maximum length of a contiguous subarray with an equal number of 0 and 1.
+    - Not possible to use a Sliding Window approach: we can not know if we should move the left or right pointer. 
+      - We can not see into the future to see if we can move the left pointer.
+    - **Solutions**
+      - [Contiguous Array - Leetcode 525 - Python](https://www.youtube.com/watch?v=agB1LyObUNE) (15 min. video)
+      - [CONTIGUOUS ARRAY | LEETCODE # 525 | PYTHON SOLUTION](https://www.youtube.com/watch?v=Xkl4EknqW8Y) (video, 10 minutes) --> MUCH BETTER visual explanation.
+        - the indexes where the diff/count is 0 marks the end of a subarray with equal number of 1s and 0s. 
+        - In other words: indexes with equal value of diff/count (even if it's different to 0) marks a balanced subarray.
+      - Brute force aka naive aka greedy: O(n^2)
 - **Subarray Sum Equals K** (LeetCode #560)
   - Real-World Link: Detecting anomalies in transaction sequences.
+  - Questions to ask:
+    - Are there negative numbers?
+  - Watch out: values can be negative.
+    - If there were only positive values, we could use a Sliding Window (two-pointer based algorithm) approach: https://www.youtube.com/watch?v=EFzYA9H0MfQ 
   - **Solutions**
-    - https://www.youtube.com/watch?v=fFVZt-6sgyo
+    - Brute force: O(n^2)
+    - Sliding windows: 
+      - Time complexity: O(n)
+      - Space complexity: O(1)
+      - Only if all numbers are positive
+    - Hashmap: 
+      - Time complexity: O(1)
+      - Space complexity: O(n)
+      - key: the prefix sum
+      - value: the number of times the prefix sum appears
+    - [Subarray Sum Equals K - Brute Force - Leetcode 560 - Python](https://www.youtube.com/watch?v=fFVZt-6sgyo) - 15 min. video
+      - O(n^2) solution: https://leetcode.com/problems/subarray-sum-equals-k/discuss/101555/Python-O(n)-solution-with-explanation
+    - [Subarray Sum Equals K - Hashmap - Leetcode 560 - Python](https://www.youtube.com/watch?v=fFVZt-6sgyo) - 15 min. video
+    - [Subarray Sum Equals K || Leetcode 560 || 2 Variant Questions Big Tech Actually Asks](https://www.youtube.com/watch?v=UwRq_ZV9qb0) - 30 min. video
+      - [Variant 1: true or false](https://www.youtube.com/watch?v=UwRq_ZV9qb0&t=1270s)
+        - We could do it with a Hash set and we don't need any counter.
+      - [Variant 2: only positive numbers](https://www.youtube.com/watch?v=UwRq_ZV9qb0&t=1555s)
+    - [Subarray Sum Equals K - Prefix Sums - Leetcode 560 - Python](https://www.youtube.com/watch?v=fFVZt-6sgyo) - 15 min. video
+      - O(n) solution: https://leetcode.com/problems/subarray-sum-equals-k/discuss/101555/Python-O(n)-solution-with-explanation
+      - [Prefix Sum Array and Range Sum Queries](https://www.youtube.com/watch?v=xbYr9JOC2Lk) (video, 7 minutes)
 - https://medium.com/@sinhaaniket192/power-of-prefix-sum-in-data-structures-and-algorithms-69fe8e0e912f
 - https://medium.com/@hanxuyang0826/prefix-sums-demystified-from-leetcode-challenges-to-real-world-solutions-ce740081cc7b
+
+## 2D Prefix Sum and Submatrix Sum Queries
+- https://www.youtube.com/watch?v=WibxoqMSMCw
