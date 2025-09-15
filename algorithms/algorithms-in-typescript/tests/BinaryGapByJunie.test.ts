@@ -21,43 +21,25 @@ import {describe, expect, it} from "vitest";
  * Therefore, time is O(L) which is O(log N) with respect to the numeric value N, not O(N) over an array.
  * Note: There is no input array here; we iterate over the bits of N’s binary form.
  */
-function binaryGapFor(aNumber: number): number {
-    const numberInBinary: string = aNumber.toString(2);
-    let maxGap: number = 0;
+function binaryGapByJunieFor(aNumber: number): number {
 
-    let index = 0;
-    while (index < numberInBinary.length) {
-        let currentGap = 0;
-        if (numberInBinary[index] === '1' && numberInBinary[index + 1] === '0') {
-            while (index < numberInBinary.length - 1 && numberInBinary[index + 1] === '0') {
-                currentGap++;
-                index++;
-            }
-            if (index == numberInBinary.length - 1 && numberInBinary[index] === '0') {
-                currentGap = 0;
-            }
-        }
-        maxGap = Math.max(maxGap, currentGap);
-        index++;
-    }
-    return maxGap;
 }
 
 describe('BinaryGap', () => {
     it('return 0 if the number does not contain a binary gap', () => {
-        expect(binaryGapFor(7)).toBe(0);
-        expect(binaryGapFor(32)).toBe(0);
+        expect(binaryGapByJunieFor(7)).toBe(0);
+        expect(binaryGapByJunieFor(32)).toBe(0);
     });
 
     it('return 1 for 101', () => {
-        expect(binaryGapFor(5)).toBe(1);
+        expect(binaryGapByJunieFor(5)).toBe(1);
     });
 
     it('return 4 for 529', () => {
-        expect(binaryGapFor(529)).toBe(4);
+        expect(binaryGapByJunieFor(529)).toBe(4);
     });
 
     it('return 5 for 1041', () => {
-        expect(binaryGapFor(1041)).toBe(5);
+        expect(binaryGapByJunieFor(1041)).toBe(5);
     });
 });
