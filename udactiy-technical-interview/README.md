@@ -10,6 +10,8 @@
     * both in  time and space terms.
     * Get the most done with minimal resources.
 * Big O Notation:
+    * https://www.digitalocean.com/community/tutorials/js-big-o-notation
+    * https://neetcode.io/courses/lessons/big-o-notation
     * O(n), where n represents the lenght of an input to your function.
     * O(1) = O(0n + 1)
     * Think about best, worst and average scenario (e.g. for iterating through an alphabet, the average scenario would be 13 times)
@@ -81,6 +83,7 @@
     * "In place sorting algorithms" just rearrange the elements inside the same data structure.
 * **Bubble sort**
     * aka "sinking sort", it's a naive approach
+    * https://www.digitalocean.com/community/tutorials/js-bubble-selection-insertion-sort
     * In each iteration, the highest value pops up.
     * In-place algorithm
     * Efficiency:
@@ -90,6 +93,7 @@
     * Space = O(1) (in-place algorithm)
     * https://en.wikipedia.org/wiki/Bubble_sort
 * **Merge sort**:
+     * https://www.digitalocean.com/community/tutorials/js-understanding-merge-sort
      * Split and sort: First divide the list into the smallest unit (1 element), then compare each element with the adjacent list to sort and merge the two adjacent lists. Finally all the elements are sorted and merged.
      * Divide and conquer
      * At the beginning, we leave an array of size 1 at the start, and all the rest take size 2.

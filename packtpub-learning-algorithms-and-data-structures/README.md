@@ -50,6 +50,7 @@
 * **Bubble sort**
     * O(n^2)
     * Outer and inner loop
+    * https://www.digitalocean.com/community/tutorials/js-bubble-selection-insertion-sort
 * **Heap sort**
     * Heap: ordered binary tree
     * Max heap: parent > child
