@@ -75,6 +75,26 @@ function lengthOfLongestSubstringWithHashSet(input: string): number {
     return lengthOfLongestSubstring;
 }
 
+/**
+ * https://www.youtube.com/watch?v=wiGpQwVHdE0&list=PLot-Xpze53lfOdF3KwpMSFEyfE77zIwiP&index=4
+ * O(n)
+ */
+function lengthOfLongestSubstringByNeetCode(input: string): number {
+    let uniqueLettersInCurrentSubstring: Set<string> = new Set();
+    let leftPointer: number = 0;
+    let lengthOfLongestSubstring: number = uniqueLettersInCurrentSubstring.size;
+    for (let rightPointer = 0; rightPointer < input.length; rightPointer++) {
+        while (uniqueLettersInCurrentSubstring.has(input[rightPointer])) {
+            uniqueLettersInCurrentSubstring.delete(input[leftPointer]);
+            leftPointer++;
+        }
+        uniqueLettersInCurrentSubstring.add(input[rightPointer]);
+        lengthOfLongestSubstring = Math.max(lengthOfLongestSubstring, uniqueLettersInCurrentSubstring.size);
+        rightPointer++;
+    }
+    return lengthOfLongestSubstring;
+}
+
 describe('Longest Substring Without Repeating Characters', () => {
     const cases = [
         {input: "zxyzxyz", expected: 3},
@@ -98,6 +118,12 @@ describe('Longest Substring Without Repeating Characters', () => {
     describe('lengthOfLongestSubstringWithHashSet should', () => {
         test.each(cases)('return $expected for $input', ({input, expected}) => {
             expect(lengthOfLongestSubstringWithHashSet(input)).toBe(expected);
+        });
+    })
+
+    describe('lengthOfLongestSubstringByNeetCode should', () => {
+        test.each(cases)('return $expected for $input', ({input, expected}) => {
+            expect(lengthOfLongestSubstringByNeetCode(input)).toBe(expected);
         });
     })
 
