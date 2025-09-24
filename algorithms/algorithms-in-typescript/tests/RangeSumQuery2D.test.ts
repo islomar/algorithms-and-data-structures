@@ -40,11 +40,17 @@ class NumMatrix {
         return this.prefix_sum_matrix[row][col - 1];
     }
 
+    private _prefix_cell_on_top_and_left_from(row: number, col: number): number {
+        if (row - 1 < 0) return 0;
+        if (col - 1 < 0) return 0;
+        return this.prefix_sum_matrix[row - 1][col - 1];
+    }
+
     sumRegion(topLeftRow: number, topLeftColumn: number, bottomRightRow: number, bottomRightColumn: number): number {
         const fullSquareSumFromBottomRight = this.prefix_sum_matrix[bottomRightRow][bottomRightColumn];
         const aboveArea = this._prefix_cell_above(topLeftRow, bottomRightColumn);
         const leftArea = this._prefix_cell_on_the_left(bottomRightRow, topLeftColumn);
-        const topLeftArea = this.prefix_sum_matrix[topLeftRow - 1][topLeftColumn - 1];
+        const topLeftArea = this._prefix_cell_on_top_and_left_from(topLeftRow, topLeftColumn);
 
         // We add back the top left area because it is substracted twice: in the above area and left area
         return fullSquareSumFromBottomRight - aboveArea - leftArea + topLeftArea;
@@ -64,5 +70,13 @@ describe("sumRegion", () => {
         expect(numMatrix.sumRegion(2, 1, 4, 3)).toBe(8);
         expect(numMatrix.sumRegion(1, 1, 2, 2)).toBe(11);
         expect(numMatrix.sumRegion(1, 2, 2, 4)).toBe(12);
+    });
+
+    it('should work for a 1x1 matrix', () => {
+        var numMatrix = new NumMatrix([
+            [-1]
+        ]);
+
+        expect(numMatrix.sumRegion(0, 0, 0, 0)).toBe(-1);
     });
 })
