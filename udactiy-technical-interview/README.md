@@ -12,6 +12,7 @@
 * Big O Notation:
     * https://www.digitalocean.com/community/tutorials/js-big-o-notation
     * https://neetcode.io/courses/lessons/big-o-notation
+    * https://samwho.dev/big-o/
     * O(n), where n represents the lenght of an input to your function.
     * O(1) = O(0n + 1)
     * Think about best, worst and average scenario (e.g. for iterating through an alphabet, the average scenario would be 13 times)

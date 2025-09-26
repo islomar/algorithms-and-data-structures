@@ -15,7 +15,16 @@
   - Merge Sort
   - Insertion Sort
 
+## Pending algorithms
+- Count Elements Greater Than Previous Average
+  - https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/count-elements-greater-than-previous-average/problem?isFullScreen=true
+- Increasing Triplet Subsequence
+  - https://leetcode.com/problems/increasing-triplet-subsequence/description/
+  - https://newsletter.pragmaticengineer.com/i/171978178/applying-step-m-to-a-real-interview-problem
+- Maximum tunnel depth
+  - https://newsletter.pragmaticengineer.com/i/171978178/how-does-identifying-boundaries-help
 
+  
 ## General Hints
 
 ### TypeScript / JavaScript
