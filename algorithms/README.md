@@ -6,6 +6,7 @@
 - 3Sum (LeetCode 15)
 - Contiguous array (LeetCode 525)
 - Longest Substring Without Repeating Characters (LeetCode 3)
+- [Count Elements Greater Than Previous Average](https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/count-elements-greater-than-previous-average/problem?isFullScreen=true)
 - **Prefix Sum**
   - Range Sum Query Immutable (LeetCode 303)
   - Subarray sum equals K (LeetCode 560)
@@ -16,8 +17,10 @@
   - Insertion Sort
 
 ## Pending algorithms
-- Count Elements Greater Than Previous Average
-  - https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/count-elements-greater-than-previous-average/problem?isFullScreen=true
+- Find the Grid of Region Average
+  - https://leetcode.com/problems/find-the-grid-of-region-average/description/
+  - https://www.youtube.com/watch?v=2e_oF_7RMBU
+  - https://www.youtube.com/watch?v=PDzGws_-vuo
 - Increasing Triplet Subsequence
   - https://leetcode.com/problems/increasing-triplet-subsequence/description/
   - https://newsletter.pragmaticengineer.com/i/171978178/applying-step-m-to-a-real-interview-problem
