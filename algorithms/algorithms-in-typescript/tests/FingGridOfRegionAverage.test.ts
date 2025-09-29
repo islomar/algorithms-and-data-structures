@@ -10,24 +10,34 @@ import {describe, expect, test} from "vitest";
 
 
 
+/**
+ * Complexity analysis:
+ * - Let m = number of rows, n = number of columns.
+ * - We examine each possible 3x3 subgrid: O((m-2)(n-2)) = O(mn).
+ *   For each subgrid, the validity check (adjacent comparisons within 3x3),
+ *   summing 9 cells, and assigning the average to 9 cells are all O(1).
+ * - Final pass to build the result grid is O(mn).
+ * Overall time: O(mn).
+ * Extra space: O(mn) for sumAverages and counts (and O(mn) for the result grid).
+ */
 function resultGridByJunie(image: number[][], threshold: number): number[][] {
-    const m = image.length;
-    const n = image[0].length;
+    const numberOfRows = image.length;
+    const numberOfColumns = image[0].length;
 
     // For each pixel, accumulate the averages of all regions it belongs to
-    const sumAverages: number[][] = Array.from({ length: m }, () => Array(n).fill(0));
-    const counts: number[][] = Array.from({ length: m }, () => Array(n).fill(0));
+    const sumAverages: number[][] = Array.from({ length: numberOfRows }, () => Array(numberOfColumns).fill(0));
+    const counts: number[][] = Array.from({ length: numberOfRows }, () => Array(numberOfColumns).fill(0));
 
     // Helper to check if a 3x3 subgrid with top-left (r, c) is a valid region
-    function isValidRegion(r: number, c: number): boolean {
-        for (let i = r; i < r + 3; i++) {
-            for (let j = c; j < c + 3; j++) {
+    function isValidRegion(row: number, column: number): boolean {
+        for (let i = row; i < row + 3; i++) {
+            for (let j = column; j < column + 3; j++) {
                 // Right neighbor within subgrid
-                if (j + 1 < c + 3) {
+                if (j + 1 < column + 3) {
                     if (Math.abs(image[i][j] - image[i][j + 1]) > threshold) return false;
                 }
                 // Down neighbor within subgrid
-                if (i + 1 < r + 3) {
+                if (i + 1 < row + 3) {
                     if (Math.abs(image[i][j] - image[i + 1][j]) > threshold) return false;
                 }
             }
@@ -36,8 +46,8 @@ function resultGridByJunie(image: number[][], threshold: number): number[][] {
     }
 
     // Iterate all 3x3 subgrids
-    for (let r = 0; r + 2 < m; r++) {
-        for (let c = 0; c + 2 < n; c++) {
+    for (let r = 0; r + 2 < numberOfRows; r++) {
+        for (let c = 0; c + 2 < numberOfColumns; c++) {
             if (!isValidRegion(r, c)) continue;
 
             // Compute floored average intensity of this region
@@ -60,9 +70,9 @@ function resultGridByJunie(image: number[][], threshold: number): number[][] {
     }
 
     // Build result grid
-    const result: number[][] = Array.from({ length: m }, () => Array(n).fill(0));
-    for (let i = 0; i < m; i++) {
-        for (let j = 0; j < n; j++) {
+    const result: number[][] = Array.from({ length: numberOfRows }, () => Array(numberOfColumns).fill(0));
+    for (let i = 0; i < numberOfRows; i++) {
+        for (let j = 0; j < numberOfColumns; j++) {
             if (counts[i][j] > 0) {
                 result[i][j] = Math.floor(sumAverages[i][j] / counts[i][j]);
             } else {
