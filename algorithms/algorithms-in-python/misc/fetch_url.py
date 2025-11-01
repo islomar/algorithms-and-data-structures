@@ -4,37 +4,12 @@ from dataclasses import dataclass, field
 
 import requests
 
-@dataclass
-class CachedUrl:
-    url: str
-    html: str
-    expiry_time: float
+from misc.url_caches import UrlCaches
 
-    def is_alive(self, current_time: float) -> bool:
-        return current_time < self.expiry_time
-
-@dataclass
-class UrlCache:
-    cached_urls: dict[str, CachedUrl] = field(default_factory=dict)
-
-    def cache_url(self, url: str, html: str, expiry_time: float) -> None:
-        self.cached_urls[url] = CachedUrl(url, html, expiry_time)
-
-    def is_url_alive_in_cache(self, url: str, current_time: float) -> bool:
-        if not self.is_url_cached(url):
-            return False
-        cached_url = self.cached_urls[url]
-        return cached_url.is_alive(current_time)
-
-    def is_url_cached(self, url: str) -> bool:
-        return url in self.cached_urls
-
-    def get_cached_html(self, url: str) -> str:
-        return self.cached_urls[url].html
 
 class UrlFetcher:
     def __init__(self):
-        self.cache: UrlCache = UrlCache()
+        self.cache: UrlCaches = UrlCaches()
 
     def fetch_html_with_ttl_cache(self, url: str, ttl_seconds: int = 300) -> str:
         current_time = time.time()
