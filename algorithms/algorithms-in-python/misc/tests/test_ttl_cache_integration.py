@@ -1,6 +1,6 @@
 from expects import contain, expect
 
-from misc.fetch_url import UrlFetcher
+from misc.src.fetch_url import UrlFetcher
 
 
 class TestFetchUrlIntegration:

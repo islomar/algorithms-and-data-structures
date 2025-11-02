@@ -1,7 +1,7 @@
 from functools import lru_cache
 
-from misc.url_caches import UrlCaches
-from misc.url_fetcher_without_cache import UrlFetcherWithoutCache
+from misc.src.url_caches import UrlCaches
+from misc.src.url_fetcher_without_cache import UrlFetcherWithoutCache
 
 
 class URLFetcherWithLRUCache:

@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 
-from misc.cached_url import CachedUrl
+from misc.src.cached_url import CachedUrl
 
 
 @dataclass

@@ -1,10 +1,8 @@
 import time
-from collections import defaultdict
-from dataclasses import dataclass, field
 
 import requests
 
-from misc.url_caches import UrlCaches
+from misc.src.url_caches import UrlCaches
 
 
 class UrlFetcher:

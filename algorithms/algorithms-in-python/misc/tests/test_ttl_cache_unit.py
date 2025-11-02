@@ -2,9 +2,7 @@ import requests
 import pytest
 from unittest.mock import Mock, patch
 
-from misc.fetch_url import UrlFetcher
-from misc.url_fetcher_with_ttl_cache import UrlFetcherWithTtlCache
-from misc.url_fetcher_without_cache import UrlFetcherWithoutCache
+from misc.src.fetch_url import UrlFetcher
 
 
 class TestFetchHTMLWithTTLCache:
