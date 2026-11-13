@@ -1,7 +1,7 @@
 from expects import expect
 
 from misc.src.url_fetcher_with_lru_cache import URLFetcherWithLRUCache
-from doublex import Mimic, Spy
+from doublex import Mimic, Spy, when
 from doublex_expects import have_been_called_with
 
 from misc.src.url_fetcher_with_manual_lru_cache import URLFetcherWithManualLRUCache

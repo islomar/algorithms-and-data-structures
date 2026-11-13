@@ -1,9 +1,10 @@
+from abc import ABC, abstractmethod
+
 import requests
 
 
-class UrlFetcherWithoutCache:
+class UrlFetcherWithoutCache(ABC):
 
+    @abstractmethod
     def execute(self, url: str, ttl_seconds: int = 300) -> str:
-        response = requests.get(url)
-        response.raise_for_status()
-        return response.text
+        pass
